@@ -1,0 +1,169 @@
+.pace {
+    z-index: 3;
+    -webkit-pointer-events: none;
+    pointer-events: none;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    -webkit-transform: translate3d(0, -50px, 0);
+    -ms-transform: translate3d(0, -50px, 0);
+    transform: translate3d(0, -50px, 0);
+
+    -webkit-transition: -webkit-transform .5s ease-out;
+    -ms-transition: -webkit-transform .5s ease-out;
+    transition: transform .5s ease-out;
+}
+
+.pace.pace-active {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.pace .pace-progress {
+    display: block;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 10px;
+    background: #449454;
+
+    pointer-events: none;
+}
+
+/* end of pace plugin*/
+
+.login-error
+{
+    padding: 8px 24px;
+    border-left:4px solid #DC3232;
+}
+
+.form-signin, .form-reset-password
+{
+    max-width: 330px;
+    padding: 50px 15px 0 15px;
+    margin: 0px auto;
+}
+
+.form-signin .form-control, .form-reset-password .form-control
+{
+    margin-bottom: 35px;
+    height: 46px;
+}
+
+.form-signin label
+{
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.login-form
+{
+    margin-top: 40px;
+}
+
+.login-links
+{
+    margin-top: 20px;
+}
+
+
+.reset-password .back-link
+{
+    margin-top: 20px;
+}
+
+.reset-password .reset-information
+{
+    margin-bottom: 20px;
+}
+
+.reset-password h3
+{
+    margin-bottom: 20px;
+}
+
+
+/*end of security part*/
+
+
+
+body
+{
+    font-family: "Lantinghei SC","Open Sans",Arial,"Hiragino Sans GB","Microsoft YaHei","微软雅黑","STHeiti","WenQuanYi Micro Hei",SimSun,sans-serif;
+}
+
+.top-nav-bar
+{
+    height: 30px;
+    background-color:#333;
+    color:white;
+    position: fixed;
+    top:0px;
+    width: 100%;
+    z-index: 2;
+}
+
+.navbar
+{
+    margin-top:30px;
+}
+
+.navbar-inverse
+{
+    background-color: #27AA67;
+    border: 0px;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav > li > a
+{
+    color:white;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover
+{
+    background-color: #333;
+}
+
+
+.wrapper
+{
+    margin-top: 120px;
+    min-height: 600px;
+}
+
+
+.carousel-control.right, .carousel-control.left
+{
+    background-image:none;
+}
+
+.glyphicon-chevron-right, .glyphicon-chevron-left
+{
+    color:black;
+}
+
+.carousel-inner
+{
+    width: 80%;
+    margin:0px auto;
+}
+
+
+
+footer
+{
+    height:200px;
+    background-color:#333;
+}

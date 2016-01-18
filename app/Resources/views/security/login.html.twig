@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+
+    <div class="wrapper">
+        <div class="container">
+                <div class="row form-signin">
+                {% if error %}
+                    <div class="login-error"><b>ERROR:</b> Invalid username or password</div>
+                {% endif %}
+
+                <form action="{{ path('login_check') }}" method="post" class="login-form">
+                    <label for="username" class="sr-only">Username:</label>
+                    <input type="text" id="username" placeholder="Email or username" class="form-control" name="_username" value="{{ last_username }}" />
+
+                    <label for="password" class="sr-only">Password:</label>
+                    <input type="password" id="password" placeholder="Password" class="form-control" name="_password" />
+
+
+                    <div clas="checkbox">
+                            <label>
+                                <input type="checkbox" id="remember_me" name="_remember_me"/>
+                                Stay logged in
+                            </label>
+                    </div>
+
+                    {#
+                        If you want to control the URL the user
+                        is redirected to on success (more details below)
+                        <input type="hidden" name="_target_path" value="/account" />
+                    #}
+
+                    <button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
