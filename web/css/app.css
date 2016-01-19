@@ -136,28 +136,38 @@ body
     background-color: #333;
 }
 
+.thumbnail
+{
+    border-radius: 0px;
+}
+
+.thumbnail-header
+{
+    width: 100%;
+    height: 20px;
+}
+
+
+.thumbnail-header-gold
+{
+    background-color: #DBD946;
+}
+
+.thumbnail-header-blue
+{
+    background-color:#005466;
+}
+
+.thumbnail-header-purple
+{
+    background-color: #400066;
+}
+
 
 .wrapper
 {
     margin-top: 120px;
     min-height: 600px;
-}
-
-
-.carousel-control.right, .carousel-control.left
-{
-    background-image:none;
-}
-
-.glyphicon-chevron-right, .glyphicon-chevron-left
-{
-    color:black;
-}
-
-.carousel-inner
-{
-    width: 80%;
-    margin:0px auto;
 }
 
 
