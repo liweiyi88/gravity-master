@@ -185,6 +185,9 @@ body
 .dropdown-menu
 {
     background-color:#27AA67;
+    border-radius: 0;
+    box-shadow: none;
+
 
 }
 
