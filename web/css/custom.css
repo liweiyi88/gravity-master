@@ -1,0 +1,86 @@
+.navbar
+{
+    margin-top:30px;
+}
+
+.navbar-inverse
+{
+    background-color: #27AA67;
+    border: 0px;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav > li > a
+{
+    color:white;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover
+{
+    background-color: #333;
+}
+
+.navbar-nav
+{
+    padding-left: 30px;
+
+}
+
+.navbar-brand
+{
+    font-size:28px;
+    font-weight: 500;
+}
+
+.thumbnail
+{
+    border-radius: 0px;
+}
+
+.thumbnail-header
+{
+    background-color: #27AA67;
+    width: 100%;
+    height: 25px;
+}
+
+
+.thumbnail-header-gold
+{
+    background-color: #DBD946;
+}
+
+.thumbnail-header-blue
+{
+    background-color:#005466;
+}
+
+.thumbnail-header-purple
+{
+    background-color: #400066;
+}
+
+.dropdown-menu
+{
+    background-color:#27AA67;
+    border-radius: 0;
+    box-shadow: none;
+
+
+}
+
+.dropdown-menu li a
+{
+    color:white !important;
+}
+
+.dropdown-menu  li a:hover
+{
+    color: white !important;
+
+}
+.dropdown-menu a:hover
+{
+    background-color: #333 !important;
+
+}
