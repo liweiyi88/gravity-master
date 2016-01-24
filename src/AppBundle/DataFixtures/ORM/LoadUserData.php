@@ -67,15 +67,10 @@ class LoadUserData extends Controller implements FixtureInterface
         $c1->setName('parent');
 
 
-
         $c->setParent($c1);
-
 
         $manager->persist($c);
         $manager->flush();
-
-
-
 
 
 
