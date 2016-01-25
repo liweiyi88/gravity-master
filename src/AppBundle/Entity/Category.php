@@ -9,7 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * Category
  *
  * @ORM\Table(name="category")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\CategoryRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\CategoryRepository")
  */
 class Category
 {
@@ -28,6 +28,15 @@ class Category
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
+
+
+    /**
+     * @var int
+     *
+     *
+     * @ORM\Column(name="priority", type="integer", nullable=true)
+     */
+    private $priority;
 
 
     /**
@@ -181,5 +190,29 @@ class Category
     public function getParent()
     {
         return $this->parent;
+    }
+
+    /**
+     * Set priority
+     *
+     * @param integer $priority
+     *
+     * @return Category
+     */
+    public function setPriority($priority)
+    {
+        $this->priority = $priority;
+
+        return $this;
+    }
+
+    /**
+     * Get priority
+     *
+     * @return integer
+     */
+    public function getPriority()
+    {
+        return $this->priority;
     }
 }

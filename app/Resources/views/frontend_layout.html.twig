@@ -37,7 +37,7 @@
                             <ul class="nav navbar-nav">
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ category.name }} <span class="caret"></span></a>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu scrollable-menu">
                                             {% for subCategory in category.children %}
                                                 <li><a href="#">{{ subCategory.name }}</a></li>
                                             {% endfor %}
@@ -107,5 +107,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="{{ asset('js/pace.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/list_filter.js') }}"></script>
 {% endblock %}
