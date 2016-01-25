@@ -42,37 +42,62 @@ class LoadUserData extends Controller implements FixtureInterface
 //        $manager->persist($user2);
 //        $manager->flush();
 
-//        $product = new Product();
-//        $product->setDescription('test1 description');
-//        $product->setName('seafood');
-//        $product->setPrice(1309.23);
-//
-//        $c1 = new Category();
-//        $c1->setName('Food');
-//
-//        $c2 = new Category();
-//        $c2->setName('Health');
-//
-//        $product->addCategory($c1);
-//        $product->addCategory($c2);
-//
-//        $manager->persist($product);
-//        $manager->flush();
 
-        $c = new Category();
-        $c->setName('child');
-
-
+        $mainCategory1 = new Category();
+        $mainCategory1->setName('健康品');
         $c1 = new Category();
-        $c1->setName('parent');
+        $c1->setName('深海鱼油');
+        $c1->setParent($mainCategory1);
+
+        $c2 = new Category();
+        $c2->setName('钙片');
+        $c2->setParent($mainCategory1);
 
 
-        $c->setParent($c1);
+        $mainCategory2 = new Category();
+        $mainCategory2->setName('女生用品');
 
-        $manager->persist($c);
+        $c3 = new Category();
+        $c3->setName('睫毛膏');
+        $c3->setParent($mainCategory2);
+
+        $mainCategory3 = new Category();
+        $mainCategory3->setName('电子游戏');
+
+        $c4 = new Category();
+        $c4->setParent($mainCategory3);
+        $c4->setName('PS4');
+
+        $c5 = new Category();
+        $c5->setParent($mainCategory3);
+        $c5->setName('Xbox 360');
+
+        $c6 = new Category();
+        $c6->setParent($mainCategory3);
+        $c6->setName('3DS');
+
+        $mainCategory4 = new Category();
+        $mainCategory4->setName('食品');
+
+        $c7 = new Category();
+        $c7->setParent($mainCategory4);
+        $c7->setName('澳洲大龙虾');
+
+
+        $manager->persist($mainCategory1);
+        $manager->persist($c1);
+        $manager->persist($c2);
+
+        $manager->persist($mainCategory2);
+        $manager->persist($c3);
+
+        $manager->persist($mainCategory3);
+        $manager->persist($c4);
+        $manager->persist($c5);
+        $manager->persist($c6);
+        $manager->persist($mainCategory4);
+        $manager->persist($c7);
         $manager->flush();
-
-
 
     }
 }

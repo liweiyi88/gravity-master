@@ -20,8 +20,12 @@ class ProductController extends Controller
      */
     public function indexAction(Request $request)
     {
+
+        $categories = $this->getDoctrine()->getRepository('AppBundle:Category')->findAll();
+
+
         // replace this example code with whatever you need
-        return $this->render('product/index.html.twig');
+        return $this->render('product/index.html.twig',array('categories'=>$categories));
     }
 
 }
