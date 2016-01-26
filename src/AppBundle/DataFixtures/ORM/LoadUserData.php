@@ -43,18 +43,27 @@ class LoadUserData extends Controller implements FixtureInterface
 //        $manager->flush();
 
 
+
+
+
         $mainCategory1 = new Category();
         $mainCategory1->setName('健康品');
         $mainCategory1->setPriority(4);
 
         $c1 = new Category();
-        $c1->setName('深海鱼油');
+        $c1->setName('药物');
         $c1->setParent($mainCategory1);
 
         $c2 = new Category();
-        $c2->setName('钙片');
+        $c2->setName('鱼油');
         $c2->setParent($mainCategory1);
 
+
+        $product = new Product();
+        $product->setName('Blackmores Vitamin E');
+        $product->setPrice(14.50);
+        $product->setDescription('test description');
+        $product->addCategory($c1);
 
         $mainCategory2 = new Category();
         $mainCategory2->setName('女生用品');
@@ -102,6 +111,9 @@ class LoadUserData extends Controller implements FixtureInterface
         $manager->persist($c6);
         $manager->persist($mainCategory4);
         $manager->persist($c7);
+
+        $manager->persist($product);
+
         $manager->flush();
 
     }
