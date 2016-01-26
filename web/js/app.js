@@ -19,9 +19,11 @@ $(document).ready(function()
 
     var timeout = null
     $('.search-input').on('keyup', function() {
+
         var text = this.value
         clearTimeout(timeout)
         timeout = setTimeout(function() {
+            $('.result-text').html('<p>搜索中... <i class="fa fa-circle-o-notch fa-spin"></i></p>');
             // Do AJAX shit here
             var url = $('#ajax-product').val();
             // run ajax query to update b_made time
