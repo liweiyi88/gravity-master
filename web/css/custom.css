@@ -20,11 +20,6 @@
     background-color: #333;
 }
 
-.navbar-nav
-{
-    padding-left: 15px;
-}
-
 .navbar-brand
 {
     font-size:28px;
@@ -82,4 +77,17 @@
 {
     background-color: #333 !important;
 
+}
+
+
+.nav-search .form-control
+{
+    border: 0px solid #CCC;
+    border-radius: 2px;
+}
+
+.input-group-addon, .input-group-btn
+{
+    border-radius:2px;
+    border:none;
 }
