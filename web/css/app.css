@@ -174,8 +174,16 @@ body
 {
     .result-wrapper
     {
-        top:300px;
-        right: 105px;
+        top: 300px;
+        right: 0;
+        max-width: 330px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .top-nav-bar, .navbar-fixed-bottom, .navbar-fixed-top
+    {
+        position: absolute;
     }
 
 }
