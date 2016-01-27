@@ -20,6 +20,11 @@
     background-color: #333;
 }
 
+.navbar-nav
+{
+    font-size:16px;
+}
+
 .navbar-brand
 {
     font-size:28px;

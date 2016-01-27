@@ -138,14 +138,6 @@ body
     padding-right:100px;
 }
 
-@media (max-width: 900px)
-{
-    .nav-search
-    {
-        padding-right:0px;
-    }
-
-}
 
 
 .result-wrapper
@@ -169,6 +161,35 @@ body
     right: 120px;
     min-height: 30px;
 }
+
+.result-wrapper ul
+{
+    padding-left:5px;
+}
+
+
+.result-wrapper a
+{
+    color:#333;
+    font-weight: 600;
+}
+
+@media (max-width: 900px)
+{
+    .nav-search
+    {
+        padding-right:0px;
+    }
+
+    .result-wrapper
+    {
+        right: 20px;
+    }
+
+}
+
+
+
 
 @media (max-width: 765px)
 {
@@ -214,6 +235,10 @@ body
     font-size: 12px;
 }
 
+.result-wrapper li
+{
+    list-style-type: none;
+}
 
 .wrapper
 {
@@ -264,4 +289,10 @@ footer .footer-row
     max-width: 800px;
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"]
+{
+    font-size: 16px;
 }
