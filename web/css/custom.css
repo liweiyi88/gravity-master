@@ -1,6 +1,6 @@
 .navbar
 {
-    margin-top:30px;
+    margin-top:55px;
 }
 
 .navbar-inverse
@@ -59,13 +59,14 @@
     background-color: #400066;
 }
 
+
+
 .dropdown-menu
 {
-    background-color:#27AA67;
+    border:none;
+    background-color:#eeeeee;
     border-radius: 0;
-    box-shadow: none;
-
-
+    min-width: 280px;
 }
 
 .dropdown-menu li a

@@ -47,11 +47,11 @@ class LoadUserData extends Controller implements FixtureInterface
 
 
         $mainCategory1 = new Category();
-        $mainCategory1->setName('健康品');
+        $mainCategory1->setName('美容洗护');
         $mainCategory1->setPriority(4);
 
         $c1 = new Category();
-        $c1->setName('药物');
+        $c1->setName('居家日用');
         $c1->setParent($mainCategory1);
 
         $c2 = new Category();
@@ -74,7 +74,7 @@ class LoadUserData extends Controller implements FixtureInterface
         $c3->setParent($mainCategory2);
 
         $mainCategory3 = new Category();
-        $mainCategory3->setName('电子游戏');
+        $mainCategory3->setName('营养保健');
         $mainCategory3->setPriority(2);
 
         $c4 = new Category();
@@ -90,7 +90,7 @@ class LoadUserData extends Controller implements FixtureInterface
         $c6->setName('3DS');
 
         $mainCategory4 = new Category();
-        $mainCategory4->setName('食品');
+        $mainCategory4->setName('奶粉');
         $mainCategory4->setPriority(1);
 
         $c7 = new Category();

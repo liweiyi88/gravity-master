@@ -104,7 +104,7 @@ body
 
 .top-nav-bar
 {
-    height: 30px;
+    height: 60px;
     background-color:#333;
     color:white;
     position: fixed;
@@ -125,6 +125,7 @@ body
 }
 
 
+
 .logo
 {
     position: absolute;
@@ -133,10 +134,7 @@ body
     width:35px;
 }
 
-.nav-search
-{
-    padding-right:100px;
-}
+
 
 
 
@@ -156,7 +154,7 @@ body
     font-size: 1.2rem;
     position: absolute;
     width: 450px;
-    z-index: 200;
+    z-index: 2000;
     top: 50px;
     right: 120px;
     min-height: 30px;
@@ -174,7 +172,7 @@ body
     font-weight: 600;
 }
 
-@media (max-width: 900px)
+@media (max-width: 960px)
 {
     .nav-search
     {
@@ -239,6 +237,19 @@ body
 {
     list-style-type: none;
 }
+
+
+.more-inner
+{
+    width:330px;
+    padding:20px;
+}
+
+.more-inner .sub-category
+{
+    border-right: 1px solid #D7CECE;
+}
+
 
 .wrapper
 {
