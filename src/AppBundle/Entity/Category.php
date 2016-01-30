@@ -53,7 +53,7 @@ class Category
     private $children;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="children",cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="children")
      * @ORM\JoinColumn(name="parent_id", referencedColumnName="id")
      */
     private $parent;

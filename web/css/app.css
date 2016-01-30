@@ -104,7 +104,7 @@ body
 
 .top-nav-bar
 {
-    height: 60px;
+    height: 50px;
     background-color:#333;
     color:white;
     position: fixed;
@@ -238,13 +238,18 @@ body
 .more-inner
 {
     min-width:450px;
-    padding:15px;
+    padding: 0px 15px 15px 15px;
 }
 
 
 .sub-category-inner
 {
     padding:5px;
+}
+
+.sub-category-title
+{
+    margin-bottom: 0px;
 }
 
 .sub-category-title, .brand-title

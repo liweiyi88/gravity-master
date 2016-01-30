@@ -8,12 +8,14 @@
  */
 namespace AppBundle\DataFixtures\ORM;
 
+use AppBundle\Entity\Brand;
 use AppBundle\Entity\Category;
 use AppBundle\Entity\Product;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\DependencyInjection\Tests\B;
 
 class LoadUserData extends Controller implements FixtureInterface
 {
@@ -46,73 +48,75 @@ class LoadUserData extends Controller implements FixtureInterface
 
 
 
-        $mainCategory1 = new Category();
-        $mainCategory1->setName('美容洗护');
-        $mainCategory1->setPriority(4);
+        $m1 = new Category();
+        $m1->setName('奶粉');
+        $m1->setPriority(1);
 
-        $c1 = new Category();
-        $c1->setName('居家日用');
-        $c1->setParent($mainCategory1);
+        $s1 = new Category();
+        $s1->setName('婴儿奶粉');
+        $s1->setParent($m1);
 
-        $c2 = new Category();
-        $c2->setName('鱼油');
-        $c2->setParent($mainCategory1);
+        $s2 = new Category();
+        $s2->setName('成人奶粉');
+        $s2->setParent($m1);
 
+        $s3 = new Category();
+        $s3->setName('成人羊奶');
+        $s3->setParent($m1);
 
-        $product = new Product();
-        $product->setName('Blackmores Vitamin E');
-        $product->setPrice(14.50);
-        $product->setDescription('test description');
-        $product->addCategory($c1);
+        $s4 = new Category();
+        $s4->setName('婴儿羊奶');
+        $s4->setParent($m1);
 
-        $mainCategory2 = new Category();
-        $mainCategory2->setName('女生用品');
-        $mainCategory2->setPriority(3);
-
-        $c3 = new Category();
-        $c3->setName('睫毛膏');
-        $c3->setParent($mainCategory2);
-
-        $mainCategory3 = new Category();
-        $mainCategory3->setName('营养保健');
-        $mainCategory3->setPriority(2);
-
-        $c4 = new Category();
-        $c4->setParent($mainCategory3);
-        $c4->setName('PS4');
-
-        $c5 = new Category();
-        $c5->setParent($mainCategory3);
-        $c5->setName('Xbox 360');
-
-        $c6 = new Category();
-        $c6->setParent($mainCategory3);
-        $c6->setName('3DS');
-
-        $mainCategory4 = new Category();
-        $mainCategory4->setName('奶粉');
-        $mainCategory4->setPriority(1);
-
-        $c7 = new Category();
-        $c7->setParent($mainCategory4);
-        $c7->setName('澳洲大龙虾');
+        $manager->persist($m1);
+        $manager->persist($s1);
+        $manager->persist($s2);
+        $manager->persist($s3);
+        $manager->persist($s4);
 
 
-        $manager->persist($mainCategory1);
-        $manager->persist($c1);
-        $manager->persist($c2);
+        $b1 = new Brand();
+        $b1->setName('Ballamy');
 
-        $manager->persist($mainCategory2);
-        $manager->persist($c3);
+        $b2 = new Brand();
+        $b2->setName('A2');
 
-        $manager->persist($mainCategory3);
-        $manager->persist($c4);
-        $manager->persist($c5);
-        $manager->persist($c6);
-        $manager->persist($mainCategory4);
-        $manager->persist($c7);
+        $b3 = new Brand();
+        $b3->setName('S26');
 
-        $manager->persist($product);
+        $b4 = new Brand();
+        $b4->setName('Aptamil');
+
+        $b5 = new Brand();
+        $b5->setName('Heinz');
+
+        $manager->persist($b1);
+        $manager->persist($b2);
+        $manager->persist($b3);
+        $manager->persist($b4);
+        $manager->persist($b5);
+
+
+        $p1 = new Product();
+        $p1->setName('Ballamy 有机奶粉三段');
+        $p1->addCategory($s4);
+        $p1->setBrand($b1);
+
+
+        $p2 = new Product();
+        $p2->setName('Ballamy 有机奶粉二段');
+        $p2->addCategory($s4);
+        $p2->setBrand($b1);
+
+        $p3 = new Product();
+        $p3->setName('Ballamy 有机奶粉一段');
+        $p3->addCategory($s4);
+        $p3->setBrand($b1);
+
+
+        $manager->persist($p1);
+        $manager->persist($p2);
+        $manager->persist($p3);
 
         $manager->flush();
 
