@@ -60,37 +60,16 @@
                                     <div class="dropdown-menu more">
                                         <div class="row more-inner">
                                             <div class="sub-category col-xs-12">
-                                                <div class="sub-category-inner col-xs-12">
-                                                    <h4 class="sub-category-title">婴儿奶粉</h4>
-                                                    <ul class="sub-category-product">
-                                                        <li>
-                                                            Bellamy
-                                                        </li>
-                                                        <li>
-                                                            A2
-                                                        </li>
-                                                        <li>
-                                                            S26
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                                <div class="sub-category-inner col-xs-12">
-                                                    <h4 class="sub-category-title">成人奶粉</h4>
-
-                                                    <ul class="sub-category-product">
-                                                        <li>
-                                                            Bellamy
-                                                        </li>
-                                                        <li>
-                                                            A2
-                                                        </li>
-                                                        <li>
-                                                            S26
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
+                                                 {% for child in category.children %}
+                                                        <div class="sub-category-inner col-xs-12">
+                                                            <h4 class="sub-category-title">{{child.name}}</h4>
+                                                            <ul class="sub-category-product">
+                                                                {% for product in child.products %}
+                                                                    <li>{{product.name}}</li>
+                                                                {% endfor %}
+                                                            </ul>
+                                                        </div>
+                                                {% endfor %}
                                             </div>
 
 

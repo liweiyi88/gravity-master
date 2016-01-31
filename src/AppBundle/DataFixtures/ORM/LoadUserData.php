@@ -99,18 +99,18 @@ class LoadUserData extends Controller implements FixtureInterface
 
         $p1 = new Product();
         $p1->setName('Ballamy 有机奶粉三段');
-        $p1->addCategory($s4);
+        $p1->addCategory($s1);
         $p1->setBrand($b1);
 
 
         $p2 = new Product();
         $p2->setName('Ballamy 有机奶粉二段');
-        $p2->addCategory($s4);
+        $p2->addCategory($s1);
         $p2->setBrand($b1);
 
         $p3 = new Product();
         $p3->setName('Ballamy 有机奶粉一段');
-        $p3->addCategory($s4);
+        $p3->addCategory($s1);
         $p3->setBrand($b1);
 
 

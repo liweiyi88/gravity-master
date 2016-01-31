@@ -22,10 +22,14 @@ class ProductController extends Controller
     {
 
         $categories = $this->getDoctrine()->getRepository('AppBundle:Category')->findAll();
+        $brands = $this->getDoctrine()->getRepository('AppBundle:Brand')->findAll();
 
 
         // replace this example code with whatever you need
-        return $this->render('product/index.html.twig',array('categories'=>$categories));
+        return $this->render('product/index.html.twig',array(
+                                                     'categories' => $categories,
+                                                     'brands' => $brands
+        ));
     }
 
 
