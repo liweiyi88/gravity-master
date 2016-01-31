@@ -25,6 +25,40 @@ class ProductController extends Controller
         $brands = $this->getDoctrine()->getRepository('AppBundle:Brand')->findAll();
 
 
+        foreach($categories as $category)
+        {
+            if($category->getParent() == null)
+            {
+                $categoryBrands = array();
+                foreach($category->getChildren() as $child)
+                {
+                    foreach($child->getProducts() as $product)
+                    {
+                        foreach($brands as $brand)
+                        {
+                            if($brand->getName() == $product->getBrand()->getName())
+                            {
+                                $isAdd = true;
+                                foreach($categoryBrands as $categoryBrand)
+                                {
+                                    if($categoryBrand->getName() == $brand->getName())
+                                    {
+                                        $isAdd = false;
+                                    }
+                                }
+                                if($isAdd)
+                                {
+                                    $categoryBrands[] = $brand;
+                                }
+                            }
+                        }
+                    }
+                }
+                $category->setBrands($categoryBrands);
+            }
+        }
+
+
         // replace this example code with whatever you need
         return $this->render('product/index.html.twig',array(
                                                      'categories' => $categories,

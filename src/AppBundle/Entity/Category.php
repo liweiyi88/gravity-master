@@ -59,6 +59,13 @@ class Category
     private $parent;
 
 
+    /**
+     * this brands attribute is only used for rendering the brands in the homepage.
+     * it is not the table column for category.
+     */
+    private $brands;
+
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -215,4 +222,21 @@ class Category
     {
         return $this->priority;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getBrands()
+    {
+        return $this->brands;
+    }
+
+    /**
+     * @param mixed $brands
+     */
+    public function setBrands($brands)
+    {
+        $this->brands = $brands;
+    }
+
 }
