@@ -17,6 +17,61 @@ $(document).ready(function()
 
 
 
+    $('body').on('mouseover','.dropdown-toggle',function()
+    {
+        var mq = window.matchMedia( "(min-width: 766px)" );
+
+        if (mq.matches)
+        {
+            $('.dropdown-menu.more').hide();
+            $(this).parent().find('.dropdown-menu.more').show();
+        }
+    });
+
+
+    //for mobile
+    $('body').on('click','.dropdown-toggle',function()
+    {
+        var mq = window.matchMedia( "(max-width: 765px)" );
+
+        if (mq.matches)
+        {
+            $(this).parent().find('.dropdown-menu.more').toggle();
+        }
+    });
+
+
+
+
+    $(document).on('mouseover', function(event) {
+        var mq = window.matchMedia( "(min-width: 766px)" );
+
+        if (mq.matches)
+        {
+            if (!$(event.target).closest('.dropdown-toggle').length) {
+                if (!$(event.target).closest('.dropdown-menu.more').length)
+                {
+                    $('.dropdown-menu.more').hide();
+                }
+
+            }
+        }
+    });
+
+
+    $(document).on('click', function(event) {
+        var mq = window.matchMedia( "(min-width: 766px)" );
+
+        if (mq.matches)
+        {
+            if (!$(event.target).closest('.dropdown-toggle').length) {
+                $('.dropdown-menu.more').hide();
+            }
+        }
+    });
+
+
+
     var timeout = null
     $('.search-input').on('keyup', function()
     {

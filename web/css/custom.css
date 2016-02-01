@@ -74,6 +74,11 @@
     min-width: 280px;
 }
 
+.dropdown:hover
+{
+    background-color: #333333;
+}
+
 .dropdown-menu li a
 {
     color:white !important;
