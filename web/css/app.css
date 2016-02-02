@@ -276,6 +276,27 @@ body
    background-color: #E4E3E3;
 }
 
+.brand-logo img
+{
+    width:160px;
+    height:80px;
+    margin-top:20px;
+}
+
+.brand-logo img:hover {
+    cursor: pointer;
+}
+
+
+.brand-category
+{
+    color:#888888;
+    font-weight: 400;
+    border-left: 4px solid #888888;
+    padding-left: 5px;
+    margin-bottom: 0px;
+}
+
 .brand .brand-inner
 {
     padding:10px;
@@ -296,6 +317,12 @@ body
     min-height: 800px;
 }
 
+.header-text h1
+{
+    margin-top:20px;
+    margin-bottom:0px;
+}
+
 h1
 {
     width:240px;
@@ -311,8 +338,8 @@ h1::after {
     height: 0px;
     border-bottom-width: 6px;
     border-bottom-style: solid;
-    border-bottom-color: inherit;
-    margin: 20px auto 26px;
+    border-bottom-color: #27AA67;
+    margin: 20px auto 0px auto;
 }
 
 footer
