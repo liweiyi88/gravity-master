@@ -3,20 +3,44 @@
 {% block wrapper %}
     <div class="wrapper">
         <div class="container">
-            <div class="header-text"><h1 class="text-center">热门品牌</h1></div>
+            <div class="header-text"><h1 class="text-center">澳新品牌</h1></div>
                 <div class="brand-wrapper">
-                    <div class="container brand-category-container"><h3 class="brand-category">保健护肤</h3></div>
 
-                    <div class="col-xs-6 col-sm-4 col-md-2 brand-logo">
-                        <img src="{{ asset('images/demo2.jpg') }}" alt="">
-                    </div>
+                    {% if categories !=null %}
+                        {% for category in categories %}
+                            {% if category.parent == null %}
+                                <div class="container brand-category-container"><h3 class="brand-category">category.name</h3></div>
+                                {% for brand in category.brands %}
 
-                    <div class="col-xs-6 col-sm-4 col-md-2 brand-logo">
-                        <img src="{{ asset('images/demo1.jpg') }}" alt="">
-                    </div>
-                    <div class="col-xs-6 col-sm-4 col-md-2 brand-logo">
-                        <img src="{{ asset('images/demo3.png') }}" alt="">
-                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+
+                    {% else %}
+                        {% for brand in brands %}
+                            <div class="col-xs-12 col-sm-4 col-md-2 brand-logo text-center">
+                                {% if brand.products is empty %}
+                                    <a href="http://www.google.com"> <img src="{{ asset('images/'~ brand.logoUrl ~'' ) }}" alt=""/></a>
+                                {% else %}
+                                    <a href="http://www.baidu.com"> <img src="{{ asset('images/'~ brand.logoUrl ~'' ) }}" alt=""/></a>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+
+                    {% endif %}
+
+                    {#<div class="container brand-category-container"><h3 class="brand-category">保健护肤</h3></div>#}
+
+                    {#<div class="col-xs-6 col-sm-4 col-md-2 brand-logo">#}
+                        {#<img src="{{ asset('images/demo2.jpg') }}" alt="">#}
+                    {#</div>#}
+
+                    {#<div class="col-xs-6 col-sm-4 col-md-2 brand-logo">#}
+                        {#<img src="{{ asset('images/demo1.jpg') }}" alt="">#}
+                    {#</div>#}
+                    {#<div class="col-xs-6 col-sm-4 col-md-2 brand-logo">#}
+                        {#<img src="{{ asset('images/demo3.png') }}" alt="">#}
+                    {#</div>#}
 
 
                     {#<div class="row">#}

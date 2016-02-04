@@ -9,9 +9,29 @@ $(document).ready(function()
         $('.result-wrapper').show();
     });
 
-    $(document).on('click', function(event) {
-        if (!$(event.target).closest('.search-input').length) {
-            $('.result-wrapper').hide();
+    $(document).on('click touchstart', function(event) {
+        var mq = window.matchMedia( "(min-width: 766px)" );
+
+
+
+
+        if (mq.matches)
+        {
+
+            if (!$(event.target).closest('.search-input').length) {
+                $('.result-wrapper').hide();
+            }
+        }
+        else
+        {
+            if (!$(event.target).closest('.search-input').length) {
+                if (!$(event.target).closest('.result-wrapper').length)
+                {
+                    $('.result-wrapper').hide();
+                }
+
+            }
+
         }
     });
 

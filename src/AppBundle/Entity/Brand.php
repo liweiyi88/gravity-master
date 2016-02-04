@@ -38,6 +38,14 @@ class Brand
 
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="logo_url", type="text", nullable=true)
+     */
+    private $logoUrl;
+
+
+    /**
      * @ORM\OneToMany(targetEntity="Product", mappedBy="brand")
      */
     private $products;
@@ -140,5 +148,29 @@ class Brand
     public function getProducts()
     {
         return $this->products;
+    }
+
+    /**
+     * Set logoUrl
+     *
+     * @param string $logoUrl
+     *
+     * @return Brand
+     */
+    public function setLogoUrl($logoUrl)
+    {
+        $this->logoUrl = $logoUrl;
+
+        return $this;
+    }
+
+    /**
+     * Get logoUrl
+     *
+     * @return string
+     */
+    public function getLogoUrl()
+    {
+        return $this->logoUrl;
     }
 }

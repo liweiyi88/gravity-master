@@ -193,16 +193,26 @@ body
 {
     .result-wrapper
     {
-        top: 300px;
+        top: 58px;
         right: 0;
-        max-width: 330px;
-        margin-right: 20px;
+        max-width: 300px;
+        margin-right: 15px;
         margin-left: 20px;
     }
 
     .top-nav-bar, .navbar-fixed-bottom, .navbar-fixed-top
     {
         position: absolute;
+    }
+
+    .top-nav-bar
+    {
+        height:72px;
+    }
+
+    .navbar-fixed-top
+    {
+        margin-top:72px;
     }
 
 }
