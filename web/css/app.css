@@ -98,7 +98,6 @@
 
 body
 {
-    background-color: #eeeeee;
     font-family: "Lantinghei SC","Open Sans",Arial,"Hiragino Sans GB","Microsoft YaHei","微软雅黑","STHeiti","WenQuanYi Micro Hei",SimSun,sans-serif;
 }
 
@@ -320,10 +319,50 @@ body
     margin-top:10px;
 }
 
+.intro
+{
+    background-color:#27AA67;
+    height:400px;
+}
+
+.intro h1
+{
+    font-size:42px;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+.intro h3
+{
+    margin:0;
+}
+
+.intro h1,.intro h2,.intro h3, .intro h4
+{
+    width:100%;
+    color:white;
+}
+
+.intro-container
+{
+    padding-top:40px;
+}
+
+.intro-btn-wrapper
+{
+    margin-top:200px;
+}
+
+.intro-btn
+{
+    width:120px;
+    height:30px;
+    border:1px solid black;
+}
 
 .wrapper
 {
-    margin-top: 120px;
+    margin-top: 100px;
     min-height: 800px;
 }
 
