@@ -345,19 +345,24 @@ body
 
 .intro-container
 {
-    padding-top:40px;
+    padding-top:100px;
 }
 
-.intro-btn-wrapper
+.partner
 {
-    margin-top:200px;
+    background-color: #1e8450;
+}
+.partner h1
+{
+    padding:10px 0px 10px 0px;
+    border:none;
+    color:white;
 }
 
-.intro-btn
+.partner h1:after
 {
-    width:120px;
-    height:30px;
-    border:1px solid black;
+    border:none;
+    margin:0px;
 }
 
 .wrapper
