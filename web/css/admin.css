@@ -3,6 +3,11 @@ body
     font-family: "Lantinghei SC","Open Sans",Arial,"Hiragino Sans GB","Microsoft YaHei","微软雅黑","STHeiti","WenQuanYi Micro Hei",SimSun,sans-serif;
 }
 
+.main-wrapper
+{
+    min-width: 980px;
+}
+
 .in
 {
     display: block;
@@ -100,10 +105,21 @@ i
 }
 
 
+.right-column.wrapper
+{
+    margin-left:250px;
+
+}
+
+
+.right-column hr
+{
+    margin-left:15px;
+}
 
 .right-column.title
 {
     margin-top:40px;
-    margin-left:40px;
+    margin-left:15px;
     font-size:32px;
 }

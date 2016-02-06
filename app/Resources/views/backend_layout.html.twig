@@ -20,11 +20,11 @@
                             <li>
                                 <a class="primary-link" aria-controls="settings-children" aria-expanded="false" data-toggle="collapse" data-target="#settings-children"><i class="fa fa-cog"></i>设置 <span class="caret"></span></a>
                                 <ul class="nav-secondary collapse
-                                   {% if app.request.attributes.get('_route') == 'admin_settings_company' %}
+                                   {% if app.request.attributes.get('_route') == 'admin_settings_homepage' %}
                                    in
                                    {% endif %}"
                                     id="settings-children">
-                                    <a href="{{ path('admin_settings_company',{'name':'company'}) }}"><i class="fa fa-trademark"></i>公司简介</a>
+                                    <a href="{{ path('admin_settings_homepage',{'name':'homepage'}) }}"><i class="fa fa-home"></i>首页设置</a>
                                 </ul>
                             </li>
                         </ul>

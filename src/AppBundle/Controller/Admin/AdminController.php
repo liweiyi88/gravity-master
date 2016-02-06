@@ -25,13 +25,14 @@ class AdminController extends Controller
 
 
     /**
-     * @Route("/admin/settings/{name}", name="admin_settings_company")
+     * @Route("/admin/settings/{name}", name="admin_settings_homepage")
      */
     public function settingsAction($name)
     {
-        if($name=='company')
+        if($name=='homepage')
         {
-            return $this->render('admin/settings_company.html.twig');
+
+            return $this->render('admin/settings_homepage.html.twig');
         }
 
     }
