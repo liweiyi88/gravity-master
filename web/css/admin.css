@@ -1,0 +1,109 @@
+body
+{
+    font-family: "Lantinghei SC","Open Sans",Arial,"Hiragino Sans GB","Microsoft YaHei","微软雅黑","STHeiti","WenQuanYi Micro Hei",SimSun,sans-serif;
+}
+
+.in
+{
+    display: block;
+}
+
+.primary-col
+{
+    color:white;
+    width:250px;
+    background-color: #4a4140;
+    min-height: 100vh;
+    float: left;
+}
+
+.vg-logo
+{
+    background-color: #27AA67;
+    width: 100%;
+    height:130px;
+    border-bottom: 2px solid white;
+}
+
+
+.vg-logo span
+{
+    position: absolute;
+    left:75px;
+    top:15px;
+    display: block;
+    width:100px;
+    height:100px;
+    color: white;
+    font-size:70px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 15%;
+    border:2px solid white;
+}
+
+
+#nav-primary a
+{
+    cursor: pointer;
+    font-size:16px;
+    color:white;
+
+}
+
+#nav-primary .primary-link
+{
+    padding: .5em 1.25em .5em .5em;
+}
+
+#nav-primary a:hover
+{
+    background-color: black;
+}
+
+.nav-secondary
+{
+    cursor: pointer;
+    font-size:13px;
+    color:white;
+    background-color: rgb(96, 94, 94);
+    padding-left: 0px;
+}
+.nav-secondary a
+{
+    padding: .5em 1.25em .5em 1.5em;
+    display: block;
+}
+
+
+.nav-secondary a:hover
+{
+    text-decoration: none;
+}
+
+
+.nav > li
+{
+    line-height: 20px;
+}
+
+.active
+{
+    background-color:black;
+}
+
+i
+{
+    line-height: 16px;
+    width:1.25em;
+    margin-right: 2px;
+}
+
+
+
+.right-column.title
+{
+    margin-top:40px;
+    margin-left:40px;
+    font-size:32px;
+}

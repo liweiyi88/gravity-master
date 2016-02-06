@@ -16,7 +16,8 @@ class BrandRepository extends EntityRepository
     {
         return $this->getEntityManager()
             ->createQuery(
-                'SELECT b FROM AppBundle:Brand b'
+                'SELECT b,p FROM AppBundle:Brand b
+                LEFT JOIN b.products p'
             )
             ->getResult();
     }

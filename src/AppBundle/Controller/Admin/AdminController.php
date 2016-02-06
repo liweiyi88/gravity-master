@@ -15,12 +15,25 @@ use Symfony\Component\HttpFoundation\Response;
 class AdminController extends Controller
 {
     /**
-     * @Route("/admin", name="admin_home")
+     * @Route("/admin/", name="admin_home")
      */
     public function indexAction(Request $request)
     {
         // replace this example code with whatever you need
-        return $this->render('product/index.html.twig');
+        return $this->render('admin/index.html.twig');
+    }
+
+
+    /**
+     * @Route("/admin/settings/{name}", name="admin_settings_company")
+     */
+    public function settingsAction($name)
+    {
+        if($name=='company')
+        {
+            return $this->render('admin/settings_company.html.twig');
+        }
+
     }
 
 }
