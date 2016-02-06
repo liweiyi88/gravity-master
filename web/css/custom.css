@@ -126,3 +126,27 @@
 {
     margin-bottom: 25px;
 }
+
+
+.alert-success
+{
+    margin-left:15px;
+    color: white;
+    background-color: #27AA67;
+    border-color: #27AA67;
+}
+
+
+.btn-primary
+{
+    color: #fff;
+    background-color: #27AA67;
+    border-color: #27AA67;
+}
+
+.btn-primary:hover
+{
+    color: #fff;
+    background-color: #187445;
+    border-color: #187445;
+}

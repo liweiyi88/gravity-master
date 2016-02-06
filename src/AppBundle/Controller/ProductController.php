@@ -23,6 +23,7 @@ class ProductController extends Controller
 
         $categories = $this->getDoctrine()->getRepository('AppBundle:Category')->findAll();
         $brands = $this->getDoctrine()->getRepository('AppBundle:Brand')->findAll();
+        $homepageSettings = $this->getDoctrine()->getRepository('AppBundle:HomepageSettings')->findSettings();
 
 
         foreach($categories as $category)
@@ -62,7 +63,8 @@ class ProductController extends Controller
         // replace this example code with whatever you need
         return $this->render('product/index.html.twig',array(
                                                      'categories' => $categories,
-                                                     'brands' => $brands
+                                                     'brands' => $brands,
+                                                     'settings' => $homepageSettings
         ));
     }
 

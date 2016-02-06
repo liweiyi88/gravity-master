@@ -19,22 +19,11 @@ class AdminController extends Controller
      */
     public function indexAction(Request $request)
     {
+
         // replace this example code with whatever you need
         return $this->render('admin/index.html.twig');
     }
 
 
-    /**
-     * @Route("/admin/settings/{name}", name="admin_settings_homepage")
-     */
-    public function settingsAction($name)
-    {
-        if($name=='homepage')
-        {
-
-            return $this->render('admin/settings_homepage.html.twig');
-        }
-
-    }
 
 }

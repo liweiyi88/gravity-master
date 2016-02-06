@@ -7,28 +7,41 @@
             <h1 class="right-column title">首页设置</h1>
             <hr>
 
+
+                {% for flash_message in app.session.flashbag.get('notice') %}
+                  <div class="alert alert-success" role="alert">
+                        <div class="flash-notice">
+                            {{ flash_message }}
+                        </div>
+                  </div>
+                {% endfor %}
+
+
+
             <div class="company-form col-xs-4">
-                <form>
+                {{ form_start(form) }}
+                    {{ form_errors(form) }}
                     <div class="form-group">
-                        <label for="trading-name">公司名称</label>
-                        <input type="email" class="form-control" id="trading-name" placeholder="例如:Visual Gravity">
+                        {{ form_label(form.tradingName) }}
+                        {{ form_widget(form.tradingName,{'attr':{'class':'form-control','placeholder':'例如:Visual Gravity'}}) }}
+
                     </div>
                     <div class="form-group">
-                        <label for="main-heading">首页正中大标题</label>
-                        <input type="password" class="form-control" id="main-heading" placeholder="例如:澳洲/新西兰货源">
+                        {{ form_label(form.mainHeading) }}
+                        {{ form_widget(form.mainHeading,{'attr':{'class':'form-control','placeholder':'例如:澳洲/新西兰货源'}}) }}
                     </div>
                     <div class="form-group">
-                        <label for="sub-heading">首页正中小标题</label>
-                        <input type="password" class="form-control" id="sub-heading" placeholder="例如:我们专注于提供最为纯正的健康产品">
+                        {{ form_label(form.subHeading) }}
+                        {{ form_widget(form.subHeading,{'attr':{'class':'form-control','placeholder':'例如:我们专注于提供最为纯正的健康产品'}}) }}
                     </div>
 
                     <div class="form-group">
-                        <label for="partner-heading">首页合作伙伴标题</label>
-                        <input type="password" class="form-control" id="partner-heading" placeholder="例如:合作伙伴">
+                        {{ form_label(form.partnerHeading) }}
+                        {{ form_widget(form.partnerHeading,{'attr':{'class':'form-control','placeholder':'例如:合作伙伴'}}) }}
                     </div>
 
-                    <button type="submit" class="btn btn-primary">确认设置</button>
-                </form>
+                        {{ form_widget(form.save,{'attr':{'class':'btn btn-primary'}}) }}
+                {{ form_end(form) }}
             </div>
         </div>
     </div>
