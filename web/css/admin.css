@@ -108,7 +108,7 @@ i
 .right-column.wrapper
 {
     margin-left:250px;
-
+    width: calc(100% - 250px);
 }
 
 
@@ -122,4 +122,9 @@ i
     margin-top:40px;
     margin-left:15px;
     font-size:32px;
+}
+
+.right-column-container
+{
+    width:auto;
 }
