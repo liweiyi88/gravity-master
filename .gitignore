@@ -3,5 +3,5 @@ vendor
 tests
 src/AppBundle/DataFixtures
 app/config/parameters.yml
-var
 composer.lock
+var
