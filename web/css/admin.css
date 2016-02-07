@@ -48,7 +48,7 @@ body
 }
 
 
-#nav-primary a
+.nav-primary a
 {
     cursor: pointer;
     font-size:16px;
@@ -56,12 +56,12 @@ body
 
 }
 
-#nav-primary .primary-link
+.nav-primary .primary-link
 {
     padding: .5em 1.25em .5em .5em;
 }
 
-#nav-primary a:hover
+.nav-primary li  a:hover
 {
     background-color: black;
 }

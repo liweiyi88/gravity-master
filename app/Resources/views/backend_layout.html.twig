@@ -16,7 +16,7 @@
                         <span>G</span>
                     </div>
                     <div class="sidebar-widget" id="nav-primary-widget">
-                        <ul id="nav-primary" class="nav nav-list active">
+                        <ul class="nav-primary nav nav-list active">
                             <li>
                                 <a class="primary-link" aria-controls="settings-children" aria-expanded="false" data-toggle="collapse" data-target="#settings-children"><i class="fa fa-cog"></i>设置 <span class="caret"></span></a>
                                 <ul class="nav-secondary collapse
@@ -26,6 +26,11 @@
                                     id="settings-children">
                                     <a href="{{ path('admin_settings_homepage') }}"><i class="fa fa-home"></i>首页设置</a>
                                 </ul>
+                            </li>
+                        </ul>
+                        <ul  class="nav-primary nav nav-list">
+                            <li>
+                                <a class="primary-link"  href="{{ path('admin_brand_new') }}"><i class="fa fa-cog"></i>品牌</a>
                             </li>
                         </ul>
                     </div>

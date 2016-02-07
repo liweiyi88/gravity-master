@@ -42,7 +42,7 @@ class SettingsController extends Controller
 
             $this->addFlash(
                 'notice',
-                '亲,设置成功!'
+                '设置成功!'
             );
 
             return $this->redirectToRoute('admin_settings_homepage');
