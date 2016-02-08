@@ -21,7 +21,8 @@ class BrandController extends Controller
 
         $form = $this->createFormBuilder($brand)
             ->add('name',TextType::class,array('label'=>'品牌名称'))
-            ->add('description',TextType::class,array('label'=>'品牌介绍'))
+            ->add('description',TextType::class,array('label'=>'品牌介绍','required'=>false))
+            ->add('website',TextType::class,array('label'=>'品牌网页','required'=>false))
             ->add('file',FileType::class,array('label'=>'品牌logo'))
             ->add('save',SubmitType::class, array('label'=>'确认品牌'))
             ->getForm();
@@ -35,6 +36,11 @@ class BrandController extends Controller
 
             $em->persist($brand);
             $em->flush();
+
+            $this->addFlash(
+                'notice',
+                '添加成功!'
+            );
 
             return $this->redirectToRoute('admin_brand_new');
         }

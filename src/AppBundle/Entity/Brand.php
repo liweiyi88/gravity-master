@@ -42,6 +42,14 @@ class Brand
     /**
      * @var string
      *
+     * @ORM\Column(name="website", type="text", nullable=true)
+     */
+    private $website;
+
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="path", type="text")
      */
     private $path;
@@ -258,4 +266,28 @@ class Brand
     }
 
 
+
+    /**
+     * Set website
+     *
+     * @param string $website
+     *
+     * @return Brand
+     */
+    public function setWebsite($website)
+    {
+        $this->website = $website;
+
+        return $this;
+    }
+
+    /**
+     * Get website
+     *
+     * @return string
+     */
+    public function getWebsite()
+    {
+        return $this->website;
+    }
 }

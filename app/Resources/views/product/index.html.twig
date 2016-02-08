@@ -28,9 +28,9 @@
                         {% for brand in brands %}
                             <div class="col-xs-12 col-sm-4 col-md-2 brand-logo text-center">
                                 {% if brand.products is empty %}
-                                    <a href="#"> <img src="{{ asset('uploads/brands/'~ brand.path ~'' ) }}" alt=""/></a>
+                                    <a href="{{ brand.website }}"> <img src="{{ asset('uploads/brands/'~ brand.path ~'' ) }}" alt=""/></a>
                                 {% else %}
-                                    <a href="#"> <img src="{{ asset('images/'~ brand.path ~'' ) }}" alt=""/></a>
+                                    <a href="brand.website"> <img src="{{ asset('images/'~ brand.path ~'' ) }}" alt=""/></a>
                                 {% endif %}
                             </div>
                         {% endfor %}
