@@ -13,7 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 class BrandController extends Controller
 {
     /**
-     * @Route("/admin/brand/new", name="admin_brand_new")
+     * @Route("/admin/brand/list", name="admin_brand_list")
      */
     public function newAction(Request $request)
     {
@@ -42,11 +42,13 @@ class BrandController extends Controller
                 '添加成功!'
             );
 
-            return $this->redirectToRoute('admin_brand_new');
+            return $this->redirectToRoute('admin_brand_list');
         }
 
 
+        $brands = $this->getDoctrine()->getRepository('AppBundle:Brand')->findAll();
 
-        return $this->render('admin/brand_new.html.twig',array('form'=>$form->createView()));
+
+        return $this->render('admin/brand_list.html.twig',array('form'=>$form->createView() ,'brands' => $brands));
     }
 }

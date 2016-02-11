@@ -50,7 +50,7 @@ class Brand
     /**
      * @var string
      *
-     * @ORM\Column(name="path", type="text")
+     * @ORM\Column(name="path", type="text", nullable=true)
      */
     private $path;
 

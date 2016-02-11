@@ -4,9 +4,7 @@
 
 $(document).ready(function()
 {
-    //$('body').on('click','.primary-link',function()
-    //{
-    //    console.log($(this).closest('.nav-secondary'));
-    //   $(this).parent().find('.nav-secondary').slideToggle( "fast" );
-    //});
+    $('#add-brand-modal').on('shown.bs.modal', function () {
+        $('.form-control').focus()
+    })
 });

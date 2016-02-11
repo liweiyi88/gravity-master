@@ -1,11 +1,14 @@
-body
+body, html
 {
+    height: 100%;
     font-family: "Lantinghei SC","Open Sans",Arial,"Hiragino Sans GB","Microsoft YaHei","微软雅黑","STHeiti","WenQuanYi Micro Hei",SimSun,sans-serif;
 }
 
 .main-wrapper
 {
-    min-width: 980px;
+    min-width: 1400px;
+    min-height: 100%;
+    display: flex;
 }
 
 .in
@@ -18,8 +21,8 @@ body
     color:white;
     width:250px;
     background-color: #4a4140;
-    min-height: 100vh;
     float: left;
+    min-height: 100%;
 }
 
 .vg-logo
@@ -107,7 +110,7 @@ i
 
 .right-column.wrapper
 {
-    margin-left:250px;
+    min-height: 100%;
     width: calc(100% - 250px);
 }
 
@@ -127,4 +130,42 @@ i
 .right-column-container
 {
     width:auto;
+}
+
+
+.add-brand-btn-div
+{
+    padding-left:0px;
+}
+
+.brand-list-table
+{
+    margin-top:50px;
+}
+
+.brand-list-table td
+{
+    vertical-align: middle !important;
+    height:57px;
+}
+
+.brand-list-table td.cell-brand-name
+{
+    width:15%;
+}
+
+.brand-list-table td.cell-brand-logo
+{
+    width:5%;
+}
+
+.brand-list-table td.cell-brand-desc
+{
+    width:58%;
+}
+
+.brand-list-table img
+{
+    width:100px;
+    height:50px;
 }

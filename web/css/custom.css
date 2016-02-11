@@ -78,7 +78,8 @@
     min-width: 280px;
 }
 
-.dropdown:hover
+
+.nav > li > a:focus, .nav > li > a:hover
 {
     background-color: #333333;
 }
@@ -144,7 +145,8 @@
     border-color: #27AA67;
 }
 
-.btn-primary:hover
+
+.btn-primary:hover, .btn-primary:focus
 {
     color: #fff;
     background-color: #187445;
