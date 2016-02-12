@@ -152,3 +152,9 @@
     background-color: #187445;
     border-color: #187445;
 }
+
+
+.breadcrumb .active
+{
+    background-color: transparent;
+}

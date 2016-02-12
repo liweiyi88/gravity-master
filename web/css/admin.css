@@ -169,3 +169,18 @@ i
     width:100px;
     height:50px;
 }
+
+
+
+.brand-edit-form img
+{
+    width:150px;
+    margin:10px;
+}
+
+.brand-edit-form .image-wrapper
+{
+    border:1px #cccccc solid;
+    margin:10px 0px;
+    border-radius: 4px;
+}

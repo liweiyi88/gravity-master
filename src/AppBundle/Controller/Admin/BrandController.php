@@ -13,7 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 class BrandController extends Controller
 {
     /**
-     * @Route("/admin/brand/list", name="admin_brand_list")
+     * @Route("/admin/brand-list", name="admin_brand_list")
      */
     public function newAction(Request $request)
     {
@@ -50,5 +50,43 @@ class BrandController extends Controller
 
 
         return $this->render('admin/brand_list.html.twig',array('form'=>$form->createView() ,'brands' => $brands));
+    }
+
+
+    /**
+     * @Route("/admin/brand-edit/{id}", name="admin_brand_edit")
+     */
+    public function editAction(Request $request,$id)
+    {
+        $brand = $this->getDoctrine()->getRepository('AppBundle:Brand')->findById($id);
+
+        $form = $this->createFormBuilder($brand)
+            ->add('name',TextType::class,array('label'=>'品牌名称'))
+            ->add('description',TextType::class,array('label'=>'品牌介绍','required'=>false))
+            ->add('website',TextType::class,array('label'=>'品牌网页','required'=>false))
+            ->add('file',FileType::class,array('label'=>'品牌logo','required'=>false))
+            ->add('save',SubmitType::class, array('label'=>'确认修改'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+
+            $brand->upload();
+
+            $em->persist($brand);
+            $em->flush();
+
+            $this->addFlash(
+                'notice',
+                '修改成功!'
+            );
+
+            return $this->redirectToRoute('admin_brand_edit',array('id'=>6));
+        }
+
+        return $this->render('admin/brand_edit.html.twig',array('form'=>$form->createView(),'brand'=>$brand));
+
     }
 }

@@ -279,10 +279,16 @@ body
 }
 
 
+.other-brands
+{
+    margin-top:30px;
+
+}
+
 .brand
 {
     margin-top: 10px;
-   background-color: #E4E3E3;
+    background-color: #E4E3E3;
 }
 
 .brand-logo img
@@ -369,6 +375,7 @@ body
 {
     margin-top: 100px;
     min-height: 800px;
+    margin-bottom: 100px;
 }
 
 .header-text h1

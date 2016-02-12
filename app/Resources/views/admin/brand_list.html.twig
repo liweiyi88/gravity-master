@@ -27,11 +27,11 @@
                 {% for brand in brands %}
                     <tr>
                         <td class="cell-brand-name"><b>{{ brand.name }}</b></td>
-                        <td class="cell-brand-logo"> <img src="{{ asset('uploads/brands/'~ brand.path ~'' ) }}" alt=""/></td>
+                        <td class="cell-brand-logo"> <a href="{{ path('admin_brand_edit',{'id':brand.id}) }}"> <img src="{{ asset('uploads/brands/'~ brand.path ~'' ) }}" alt=""/></a></td>
                         <td class="cell-brand-desc text-center">{{ brand.description }}</td>
-                        <td>
-                            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i> 修改品牌</button>
-                            <button class="btn btn-danger btn-sm"><i class="fa fa-times"></i> 删除</button>
+                        <td class="text-right">
+                            <a href="{{ path('admin_brand_edit', {'id': brand.id})  }}"> <button class="btn btn-primary btn-sm">修改品牌</button></a>
+                            <button class="btn btn-danger btn-sm"> 删除</button>
                         </td>
                     </tr>
                 {% endfor %}
@@ -83,7 +83,4 @@
             </div>
         </div>
     </div>
-
-
-
 {% endblock %}

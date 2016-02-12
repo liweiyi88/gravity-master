@@ -16,19 +16,23 @@
                         <span>G</span>
                     </div>
                     <div class="sidebar-widget" id="nav-primary-widget">
-                        <ul class="nav-primary nav nav-list active">
+                        <ul class="nav-primary nav nav-list">
                             <li>
                                 <a class="primary-link" aria-controls="settings-children" aria-expanded="false" data-toggle="collapse" data-target="#settings-children"><i class="fa fa-cog"></i>设置 <span class="caret"></span></a>
                                 <ul class="nav-secondary collapse
                                    {% if app.request.attributes.get('_route') == 'admin_settings_homepage' %}
-                                   in
+                                   in active
                                    {% endif %}"
                                     id="settings-children">
                                     <a href="{{ path('admin_settings_homepage') }}"><i class="fa fa-home"></i>首页设置</a>
                                 </ul>
                             </li>
                         </ul>
-                        <ul  class="nav-primary nav nav-list">
+                        <ul  class="nav-primary nav nav-list
+                        {%
+                              if app.request.attributes.get('_route') == 'admin_brand_list' or app.request.attributes.get('_route') == 'admin_brand_edit'
+                        %} active
+                        {% endif %} ">
                             <li>
                                 <a class="primary-link"  href="{{ path('admin_brand_list') }}"><i class="fa fa-trademark"></i>品牌</a>
                             </li>

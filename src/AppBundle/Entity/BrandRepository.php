@@ -22,4 +22,18 @@ class BrandRepository extends EntityRepository
             ->getResult();
     }
 
+    public function findById($id)
+    {
+
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT b FROM AppBundle:Brand b
+                 WHERE
+                 b.id = :id
+                '
+            )
+            ->setParameter('id',$id)
+            ->getOneOrNullResult();
+    }
+
 }

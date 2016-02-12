@@ -26,19 +26,29 @@
                                 </div>
                             {% endif %}
                         {% endfor %}
-
                     {% else %}
+                        {# if there is only record of brand,output this way. #}
                         {% for brand in brands %}
                             <div class="col-xs-12 col-sm-4 col-md-2 brand-logo text-center">
-                                {% if brand.products is empty %}
-                                    <a href="{{ brand.website }}"> <img src="{{ asset('uploads/brands/'~ brand.path ~'' ) }}" alt=""/></a>
-                                {% else %}
-                                    <a href="brand.website"> <img src="{{ asset('uploads/brands/'~ brand.path ~'' ) }}" alt=""/></a>
-                                {% endif %}
+                                <a href="{{ brand.website }}"> <img src="{{ asset('uploads/brands/'~ brand.path ~'' ) }}" alt=""/></a>
                             </div>
                         {% endfor %}
                     {% endif %}
                 </div>
+        </div>
+
+        {# if there is any brand which is not linked to any product, show it in the other-brand div #}
+        <div class="other-brands container">
+            <div class="container brand-category-container"><h3 class="brand-category">其他品牌</h3></div>
+            <div class="container">
+                {% for brand in brands %}
+                    {% if brand.products is empty %}
+                        <div class="col-xs-12 col-sm-4 col-md-2 brand-logo text-center">
+                            <a href="{{ brand.website }}"> <img src="{{ asset('uploads/brands/'~ brand.path ~'' ) }}" alt=""/></a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 
