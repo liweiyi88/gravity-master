@@ -134,6 +134,11 @@ body
 }
 
 
+.breadcrumb-wrapper
+{
+    margin-top:50px;
+}
+
 
 
 
@@ -285,6 +290,11 @@ body
 
 }
 
+.brand-category-container
+{
+    margin-top:50px;
+}
+
 .brand
 {
     margin-top: 10px;
@@ -403,6 +413,11 @@ h1::after {
     margin: 20px auto 0px auto;
 }
 
+h2,h4
+{
+    font-weight: 600;
+}
+
 footer
 {
     min-height:200px;
@@ -433,4 +448,17 @@ footer .footer-row
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"]
 {
     font-size: 16px;
+}
+
+
+
+.thumbnail img
+{
+    padding:10px;
+}
+
+
+.product-block
+{
+    margin-top:50px;
 }

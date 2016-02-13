@@ -17,13 +17,13 @@
                     {% if categories !=null %}
                         {% for category in categories %}
                             {% if category.parent == null %}
-                                <div class="container brand-category-container"><h3 class="brand-category">{{category.name}}</h3></div>
+                                <div class="container brand-category-container"><a href="{{ path('category_list',{'id':category.id}) }}"><h3 class="brand-category">{{category.name}}</h3></a></div>
 
+                                {% for brand in category.brands %}
                                 <div class="col-xs-12 col-sm-4 col-md-2 brand-logo text-center">
-                                   {% for brand in category.brands %}
                                        <a href="brand.website"> <img src="{{ asset('uploads/brands/'~ brand.path ~'' ) }}" alt=""/></a>
-                                   {% endfor %}
                                 </div>
+                                {% endfor %}
                             {% endif %}
                         {% endfor %}
                     {% else %}

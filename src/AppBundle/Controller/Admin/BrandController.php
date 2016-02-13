@@ -83,7 +83,7 @@ class BrandController extends Controller
                 '修改成功!'
             );
 
-            return $this->redirectToRoute('admin_brand_edit',array('id'=>6));
+            return $this->redirectToRoute('admin_brand_edit',array('id'=>$id));
         }
 
         return $this->render('admin/brand_edit.html.twig',array('form'=>$form->createView(),'brand'=>$brand));

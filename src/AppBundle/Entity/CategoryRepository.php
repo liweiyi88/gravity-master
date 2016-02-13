@@ -24,7 +24,21 @@ class CategoryRepository extends EntityRepository
 
         $result = $query->getResult();
         return $result;
+    }
 
+    public function findById($id)
+    {
+        $query = $this->getEntityManager()
+            ->createQuery(
+                'SELECT c FROM AppBundle:Category c
+                 WHERE
+                 c.id = :id
+                '
+            );
+        $query->setParameter('id',$id);
+
+        $result = $query->getOneOrNullResult();
+        return $result;
     }
 
 }
