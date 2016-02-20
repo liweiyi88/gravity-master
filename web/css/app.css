@@ -253,6 +253,8 @@ body
 {
     min-width:450px;
     padding: 0px 15px 15px 15px;
+    max-height: 700px;
+    overflow: auto;
 }
 
 
@@ -264,6 +266,16 @@ body
 .sub-category-title
 {
     margin-bottom: 0px;
+}
+
+.sub-category-title a
+{
+    color:black;
+}
+
+.sub-category-title a:hover
+{
+    background-color: transparent !important;
 }
 
 .sub-category-title, .brand-title
@@ -283,6 +295,15 @@ body
     margin-top:5px;
 }
 
+.sub-category-span
+{
+    padding: 5px;
+}
+
+.sub-category-span a
+{
+    color: black;
+}
 
 .other-brands
 {
@@ -320,6 +341,7 @@ body
     border-left: 4px solid #888888;
     padding-left: 5px;
     margin-bottom: 0px;
+    font-size:24px;
 }
 
 .brand .brand-inner

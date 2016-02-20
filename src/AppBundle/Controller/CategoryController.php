@@ -18,12 +18,12 @@ class CategoryController extends Controller
         $homepageSettings = $this->getDoctrine()->getRepository('AppBundle:HomepageSettings')->findSettings();
         $category = $this->getDoctrine()->getRepository('AppBundle:Category')->findById($id);
 
-        foreach($categories as $category)
+        foreach($categories as $eachCategory)
         {
-            if($category->getParent() == null)
+            if($eachCategory->getParent() == null)
             {
                 $categoryBrands = array();
-                foreach($category->getChildren() as $child)
+                foreach($eachCategory->getChildren() as $child)
                 {
                     foreach($child->getProducts() as $product)
                     {
@@ -47,10 +47,9 @@ class CategoryController extends Controller
                         }
                     }
                 }
-                $category->setBrands($categoryBrands);
+                $eachCategory->setBrands($categoryBrands);
             }
         }
-
 
         return $this->render('category/category_list.html.twig',
                     array('settings'=>$homepageSettings,

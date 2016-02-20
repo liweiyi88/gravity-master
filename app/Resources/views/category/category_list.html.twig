@@ -6,10 +6,23 @@
         <div class="breadcrumb-wrapper">
             <ol class="breadcrumb">
                 <li><a href="{{ path('homepage') }}">首页</a></li>
+                {% if category.parent == null %}
                 <li class="active">{{ category.name }}</li>
+                {% else %}
+                    <li><a href="{{ path('category_list',{'id':category.parent.id}) }}">{{ category.parent.name }}</a></li>
+                    <li class="active">{{ category.name }}</li>
+                {% endif %}
             </ol>
         </div>
     </div>
+
+    {% if category.children != null %}
+        <div class="container">
+            {% for category in category.children %}
+                <span class="sub-category-span"><a href="{{ path('category_list',{'id':category.id}) }}">{{ category.name }}</a></span>
+            {% endfor %}
+        </div>
+    {% endif %}
 
 
     <div class="container">
