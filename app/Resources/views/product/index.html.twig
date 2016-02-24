@@ -14,50 +14,17 @@
 
         <div class="container">
                 <div class="brand-wrapper">
-                    {% if categories !=null %}
-                        {% for category in categories %}
-                            {% if category.parent == null %}
-                                <div class="container brand-category-container">
-                                         <a href="{{ path('category_list',{'id':category.id}) }}">
-                                             <span class="brand-category">{{category.name}}</span>
-                                         </a>
-                                </div>
-
-                                {% for brand in category.brands %}
-                                <div class="col-xs-12 col-sm-4 col-md-2 brand-logo text-center">
-                                       <a href="brand.website"> <img src="{{ asset('uploads/brands/'~ brand.path ~'' ) }}" alt=""/></a>
-                                </div>
-                                {% endfor %}
-                            {% endif %}
-                        {% endfor %}
-                    {% else %}
-                        {# if there is only record of brand,output this way. #}
+                    {% if brands !=null %}
                         {% for brand in brands %}
-                            <div class="col-xs-12 col-sm-4 col-md-2 brand-logo text-center">
-                                <a href="{{ brand.website }}"> <img src="{{ asset('uploads/brands/'~ brand.path ~'' ) }}" alt=""/></a>
-                            </div>
+                                    <div class="col-xs-12 col-sm-4 col-md-3 brand-logo text-center">
+                                        <a href="{{ path('brand_detail',{'id':brand.id}) }}"> <img src="{{ asset('uploads/brands/'~ brand.path ~'' ) }}" alt=""/></a>
+                                    </div>
                         {% endfor %}
                     {% endif %}
                 </div>
         </div>
 
-        {# if there is any brand which is not linked to any product, show it in the other-brand div #}
-        <div class="other-brands container">
-            <div class="container brand-category-container">
-                <span class="brand-category">其他品牌</span>
-            </div>
-            <div class="container">
-                {% for brand in brands %}
-                    {% if brand.products is empty %}
-                        <div class="col-xs-12 col-sm-4 col-md-2 brand-logo text-center">
-                            <a href="{{ brand.website }}"> <img src="{{ asset('uploads/brands/'~ brand.path ~'' ) }}" alt=""/></a>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-    </div>
 
-    <input type="hidden" id="ajax-product" value="{{ url('ajax_get_product') }}">
+    </div>
 {% endblock %}
 

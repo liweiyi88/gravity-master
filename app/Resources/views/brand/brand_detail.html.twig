@@ -1,0 +1,91 @@
+{% extends 'frontend_layout.html.twig' %}
+
+{% block wrapper %}
+    <div class="wrapper">
+
+        <div class="container">
+            <div class="brand-logo"><img src="{{ asset('uploads/brands/'~ brand.path ~'' ) }}"></div>
+            <hr>
+            <h2>{{ brand.name }}</h2>
+            <p>
+                {{ brand.description }}
+            </p>
+        </div>
+
+
+        {% if brand.products is not empty %}
+        <div class="container">
+            <h3 class="text-center">{{ brand.name }} 的产品</h3>
+            <div class="col-xs-12 col-sm-6 col-md-3 product-block">
+                <div class="thumbnail">
+                    <div class="thumbnail-header"></div>
+                    <img src="{{ asset('uploads/products/a2.jpg') }}" alt="...">
+                </div>
+                <h4>A2 有机奶粉二段</h4>
+                <p>$20 AUD</p>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-3 product-block">
+                <div class="thumbnail">
+                    <div class="thumbnail-header"></div>
+                    <img src="{{ asset('uploads/products/a2.jpg') }}" alt="...">
+                </div>
+                <h4>A2 有机奶粉二段</h4>
+                <p>$20 AUD</p>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-3 product-block">
+                <div class="thumbnail">
+                    <div class="thumbnail-header"></div>
+                    <img src="{{ asset('uploads/products/a2.jpg') }}" alt="...">
+                </div>
+                <h4>A2 有机奶粉二段</h4>
+                <p>$20 AUD</p>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-3 product-block">
+                <div class="thumbnail">
+                    <div class="thumbnail-header"></div>
+                    <img src="{{ asset('uploads/products/a2.jpg') }}" alt="...">
+                </div>
+                <h4>A2 有机奶粉二段</h4>
+                <p>$20 AUD</p>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-3 product-block">
+                <div class="thumbnail">
+                    <div class="thumbnail-header"></div>
+                    <img src="{{ asset('uploads/products/a2.jpg') }}" alt="...">
+                </div>
+                <h4>A2 有机奶粉二段</h4>
+                <p>$20 AUD</p>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-3 product-block">
+                <div class="thumbnail">
+                    <div class="thumbnail-header"></div>
+                    <img src="{{ asset('uploads/products/a2.jpg') }}" alt="...">
+                </div>
+                <h4>A2 有机奶粉二段</h4>
+                <p>$20 AUD</p>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-3 product-block">
+                <div class="thumbnail">
+                    <div class="thumbnail-header"></div>
+                    <img src="{{ asset('uploads/products/a2.jpg') }}" alt="...">
+                </div>
+                <h4>A2 有机奶粉二段</h4>
+                <p>$20 AUD</p>
+            </div>
+        </div>
+        {% endif %}
+
+
+    </div>
+
+{% endblock %}

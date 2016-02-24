@@ -311,10 +311,13 @@ body
 
 }
 
-.brand-category-container
+
+.brand-wrapper
 {
-    margin-top:50px;
+    max-width: 850px;
+    margin: 0 auto;
 }
+
 
 .brand
 {
@@ -327,6 +330,8 @@ body
     width:160px;
     height:80px;
     margin-top:20px;
+    border: 1px solid #aaa8a8;
+
 }
 
 .brand-logo img:hover {
