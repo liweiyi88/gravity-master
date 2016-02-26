@@ -139,6 +139,11 @@ body
     margin-top:50px;
 }
 
+.breadcrumb-wrapper a
+{
+    color:black;
+}
+
 
 
 
@@ -258,6 +263,12 @@ body
 }
 
 
+.sub-category-link
+{
+    padding-top:5px;
+    padding-bottom: 15px;
+}
+
 .sub-category-inner
 {
     padding:5px;
@@ -265,7 +276,7 @@ body
 
 .sub-category-title
 {
-    margin-bottom: 0px;
+    margin-bottom: 5px;
 }
 
 .sub-category-title a
@@ -325,12 +336,18 @@ body
     background-color: #E4E3E3;
 }
 
+.brand-desc
+{
+    line-height: 1.8em;
+    margin-top:20px;
+}
+
 .brand-logo img
 {
     width:160px;
     height:80px;
     margin-top:20px;
-    border: 1px solid #aaa8a8;
+    border: 1px solid #e9e9e9;
 
 }
 
@@ -338,6 +355,16 @@ body
     cursor: pointer;
 }
 
+
+#brand-products
+{
+    margin-top:50px;
+}
+
+#brand-products h3
+{
+    font-weight: 600;
+}
 
 .brand-category
 {
@@ -360,6 +387,12 @@ body
 .brand-inner .brand-label
 {
     margin-top:10px;
+}
+
+.brand-inner .brand-label a:hover
+{
+    background-color: transparent !important;
+    color:transparent;
 }
 
 .intro
@@ -447,28 +480,37 @@ h2,h4
 
 footer
 {
-    min-height:200px;
-    background-color:rgba(51, 51, 51, 0.84);
-    color:white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 100px;
+    color: #99979c;
+    text-align: center;
+    background-color: #4d4b51;
 }
 
-footer p
+footer a
 {
-    font-size:18px;
+    color: white;
 }
 
-footer .fa
+footer a:hover
 {
-    width: 22px;
-    font-size: 20px;
+    color: white;
 }
 
-footer .footer-row
+footer a:focus
 {
-    margin:0 auto;
-    max-width: 800px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    color: white;
+}
+
+footer ul
+{
+    padding-left:0px;
+}
+
+footer li
+{
+    list-style-type: none;
 }
 
 
@@ -493,7 +535,7 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 
 .product-container
 {
-    margin-top:220px;
+    margin-top:50px;
 }
 
 
@@ -524,6 +566,7 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 
 .product-desc
 {
+    line-height: 1.8em;
     position: absolute;
     top:200px;
     color: black;

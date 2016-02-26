@@ -16,13 +16,19 @@
         </div>
     </div>
 
-    {% if category.children != null %}
-        <div class="container">
-            {% for category in category.children %}
-                <span class="sub-category-span"><a href="{{ path('category_list',{'id':category.id}) }}">{{ category.name }}</a></span>
-            {% endfor %}
-        </div>
-    {% endif %}
+
+    <div class="container sub-category-link">
+        {% if category.children is not empty %}
+        {% for category in category.children %}
+            <span class="sub-category-span"><a href="{{ path('category_list',{'id':category.id}) }}">{{ category.name }}</a></span>
+        {% endfor %}
+            {% elseif category.parent is not empty %}
+
+                {% for category in category.parent.children %}
+                    <span class="sub-category-span"><a href="{{ path('category_list',{'id':category.id}) }}">{{ category.name }}</a></span>
+                {% endfor %}
+        {% endif %}
+    </div>
 
 
     <div class="container">

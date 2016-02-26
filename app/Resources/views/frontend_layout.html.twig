@@ -77,11 +77,13 @@
                                                     <div class="col-xs-10">
                                                         {% for brand in category.brands %}
                                                             <div class="col-xs-6 brand-label">
-                                                               <span class="label label-primary">
+                                                               <a href="{{ path('brand_detail',{'id':brand.id}) }}">
+                                                                 <span class="label label-primary">
                                                                    {% if brand is not null %}
                                                                    {{ brand.name }}
                                                                    {% endif %}
-                                                               </span>
+                                                                 </span>
+                                                               </a>
                                                             </div>
                                                         {% endfor %}
                                                     </div>
@@ -104,35 +106,14 @@
 {% endblock %}
 
 {% block footer %}
-    <footer>
+    <footer class="footer text-left">
         <div class="container">
-            <div class="row footer-row">
-                <div class="col-md-3 col-sm-12 col-xs-12">
-                    <h2>社交平台</h2>
-                    <p><i class="fa fa-facebook-official"></i> 脸书</p>
-                    <p><i class="fa fa-weixin"></i> 微信</p>
-                    <p><i class="fa fa-weibo"></i> 微博</p>
-                </div>
-
-                <div class="col-md-3 col-sm-12 col-xs-12">
-                    <h2>相关</h2>
-                    <p>关于我们</p>
-                    <p>联系方式</p>
-                </div>
-
-                <div class="col-md-3 col-sm-12 col-xs-12">
-                    <h2>合作伙伴</h2>
-                    <p>微软</p>
-                    <p>谷歌</p>
-                </div>
-
-                <div class="col-md-3 col-sm-12 col-xs-12">
-                    <h2>公司</h2>
-                    <p>我们的历史</p>
-                    <p>规模</p>
-                </div>
-
-            </div>
+            <ul>
+                <li><a href="">关于我们</a></li>
+            </ul>
+            <p>
+                powered by Gravity
+            </p>
         </div>
 
         <input type="hidden" id="ajax-product" value="{{ url('ajax_get_product') }}">

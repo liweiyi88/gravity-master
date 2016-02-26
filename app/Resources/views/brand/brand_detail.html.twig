@@ -4,17 +4,33 @@
     <div class="wrapper">
 
         <div class="container">
-            <div class="brand-logo"><img src="{{ asset('uploads/brands/'~ brand.path ~'' ) }}"></div>
-            <hr>
-            <h2>{{ brand.name }}</h2>
-            <p>
+            <div class="breadcrumb-wrapper">
+                <ol class="breadcrumb">
+                    <li><a href="{{ path('homepage') }}">首页</a></li>
+                    <li class="active">{{ brand.name }}</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="container">
+
+            {% if brand.path is not empty %}
+                    <div class="brand-logo"><img src="{{ asset('uploads/brands/'~ brand.path ~'' ) }}"></div>
+            {% else %}
+                    <h2>{{ brand.name }}</h2>
+            {% endif %}
+
+            {% if brand.description is not empty %}
+            <p class="brand-desc well">
                 {{ brand.description }}
             </p>
+            {% endif %}
+
         </div>
 
 
         {% if brand.products is not empty %}
-        <div class="container">
+        <div class="container" id="brand-products">
             <h3 class="text-center">{{ brand.name }} 的产品</h3>
             <div class="col-xs-12 col-sm-6 col-md-3 product-block">
                 <div class="thumbnail">
