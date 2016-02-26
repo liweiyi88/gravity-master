@@ -489,3 +489,42 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 {
     margin-top:50px;
 }
+
+
+.product-container
+{
+    margin-top:220px;
+}
+
+
+
+.product-container .image-inners
+{
+    margin: 0 auto;
+}
+
+.product-area img
+{
+    max-width: 350px;
+}
+
+
+.product-row
+{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.product-price
+{
+    font-size: 16px;
+    font-weight: 600;
+    color: #b7b5b5;
+}
+
+.product-desc
+{
+    position: absolute;
+    top:200px;
+    color: black;
+}

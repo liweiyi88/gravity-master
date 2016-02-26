@@ -69,6 +69,28 @@ class ProductController extends Controller
     }
 
 
+    /**
+     * @Route("/product/detail/{id}", name="product_detail")
+     */
+    public function detailAction($id)
+    {
+        $categories = $this->getDoctrine()->getRepository('AppBundle:Category')->findAll();
+        $brands = $this->getDoctrine()->getRepository('AppBundle:Brand')->findAll();
+        $homepageSettings = $this->getDoctrine()->getRepository('AppBundle:HomepageSettings')->findSettings();
+
+        $product = $this->getDoctrine()->getRepository('AppBundle:Product')->findById($id);
+
+        return $this->render('product/product_detail.html.twig',array(
+            'categories' => $categories,
+            'brands' => $brands,
+            'settings' => $homepageSettings,
+            'product' => $product
+        ));
+
+
+    }
+
+
 
     /**
      * @Route("/product/ajax/get", name="ajax_get_product")

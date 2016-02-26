@@ -31,4 +31,18 @@ class ProductRepository extends EntityRepository
         return $result;
     }
 
+    public function findById($id)
+    {
+
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT p FROM AppBundle:Product p
+                 WHERE
+                 p.id = :id
+                '
+            )
+            ->setParameter('id',$id)
+            ->getOneOrNullResult();
+    }
+
 }

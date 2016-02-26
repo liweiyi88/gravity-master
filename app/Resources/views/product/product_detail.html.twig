@@ -1,0 +1,35 @@
+{% extends 'frontend_layout.html.twig' %}
+
+{% block wrapper %}
+    <div class="wrapper">
+        <div class="container product-container">
+            <div class="product-area">
+                <div class="row product-row">
+                    <div class="col-sm-6 image-container">
+                        <div class="image-inner">
+                            <img src="{{ asset('uploads/products/a2.jpg') }}" alt="" />
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <h2>A2 2段奶粉</h2>
+                        <hr>
+                        <p class="product-price">
+                            市场价 ¥24
+                        </p>
+
+                        <p class="product-price">
+                            本店零售价 ¥17
+                        </p>
+
+                        <hr>
+                        <p class="product-desc">
+                            关于A2奶粉的介绍
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
