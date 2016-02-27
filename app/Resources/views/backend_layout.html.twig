@@ -37,6 +37,16 @@
                                 <a class="primary-link"  href="{{ path('admin_brand_list') }}"><i class="fa fa-trademark"></i>品牌</a>
                             </li>
                         </ul>
+
+                        <ul  class="nav-primary nav nav-list
+                        {%
+                        if app.request.attributes.get('_route') == 'admin_category_list' or app.request.attributes.get('_route') == 'admin_brand_edit'
+                        %} active
+                        {% endif %} ">
+                            <li>
+                                <a class="primary-link" href="{{ path('admin_category_list') }}"><i class="fa fa-sitemap"></i>分类</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

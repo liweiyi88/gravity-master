@@ -19,7 +19,7 @@ body, html
 .primary-col
 {
     color:white;
-    width:250px;
+    width:200px;
     background-color: #4a4140;
     float: left;
     min-height: 100%;
@@ -37,7 +37,7 @@ body, html
 .vg-logo span
 {
     position: absolute;
-    left:75px;
+    left:50px;
     top:15px;
     display: block;
     width:100px;
@@ -111,7 +111,7 @@ i
 .right-column.wrapper
 {
     min-height: 100%;
-    width: calc(100% - 250px);
+    width: calc(100% - 200px);
 }
 
 
@@ -183,4 +183,18 @@ i
     border:1px #cccccc solid;
     margin:10px 0px;
     border-radius: 4px;
+}
+
+
+.category-list
+{
+    margin-top:50px;
+}
+
+
+.table-header
+{
+    background-color:#27AA67;
+    color:#FFFFFF;
+    font-weight: 400;
 }
