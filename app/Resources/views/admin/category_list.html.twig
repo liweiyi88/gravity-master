@@ -27,7 +27,6 @@
                     <tr class="table-header">
                         <th>类别名称</th>
                         <th>父类别</th>
-                        <th>显示顺序</th>
                         <th></th>
                     </tr>
                     {% for category in categories %}
@@ -39,10 +38,8 @@
                                 {% endif %}
                             </td>
 
-                            <td>{{ category.priority }}</td>
-
                             <td class="text-right">
-                                <a href=""> <button class="btn btn-primary btn-sm">修改分类</button></a>
+                                <a href="{{ path('admin_category_edit',{'id':category.id}) }}"> <button class="btn btn-primary btn-sm">修改分类</button></a>
                                 <button class="btn btn-danger btn-sm"> 删除</button>
                             </td>
                         </tr>

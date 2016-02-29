@@ -31,6 +31,20 @@ class ProductRepository extends EntityRepository
         return $result;
     }
 
+    public function findAllWithCategoryBrand()
+    {
+        $query = $this->getEntityManager()
+            ->createQuery(
+                'SELECT c,p,b FROM AppBundle:Product p
+                 LEFT JOIN p.categories c
+                 LEFT JOIN p.brand b
+                '
+            );
+
+        $result = $query->getResult();
+        return $result;
+    }
+
     public function findById($id)
     {
 

@@ -47,6 +47,18 @@
                                 <a class="primary-link" href="{{ path('admin_category_list') }}"><i class="fa fa-sitemap"></i>分类</a>
                             </li>
                         </ul>
+
+                        <ul  class="nav-primary nav nav-list
+                        {%
+                        if app.request.attributes.get('_route') == 'admin_product_list' or app.request.attributes.get('_route') == 'admin_product_edit'
+                        %} active
+                        {% endif %} ">
+                            <li>
+                                <a class="primary-link" href="{{ path('admin_product_list') }}"><i class="fa fa-product-hunt"></i>产品</a>
+                            </li>
+                        </ul>
+
+
                     </div>
                 </div>
             </div>

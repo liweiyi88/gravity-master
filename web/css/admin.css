@@ -186,11 +186,21 @@ i
 }
 
 
-.category-list
+.category-list, .product-list
 {
     margin-top:50px;
 }
 
+
+.cell-product-desc
+{
+    max-width:300px;
+}
+
+.product-list .actions
+{
+    min-width:140px;
+}
 
 .table-header
 {
