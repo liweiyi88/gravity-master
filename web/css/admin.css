@@ -75,7 +75,7 @@ body, html
     font-size:13px;
     color:white;
     background-color: rgb(96, 94, 94);
-    padding-left: 0px;
+    padding-left: 0;
 }
 .nav-secondary a
 {
@@ -135,7 +135,7 @@ i
 
 .add-brand-btn-div
 {
-    padding-left:0px;
+    padding-left:0;
 }
 
 .brand-list-table
@@ -181,7 +181,7 @@ i
 .brand-edit-form .image-wrapper
 {
     border:1px #cccccc solid;
-    margin:10px 0px;
+    margin:10px 0;
     border-radius: 4px;
 }
 
