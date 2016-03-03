@@ -6,7 +6,7 @@
 var $collectionHolder;
 
 // setup an "add a tag" link
-var $addTagLink = $('<a href="#" class="add_category_link">添加分类</a>');
+var $addTagLink = $('<a href="#" class="add_category_link">+添加更多类别</a>');
 var $newLinkLi = $('<li></li>').append($addTagLink);
 
 jQuery(document).ready(function() {

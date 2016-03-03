@@ -55,7 +55,7 @@ class ProductController extends Controller
             ))
             ->add('categories', CollectionType::class, array(
                   'entry_type' => CategoryType::class,
-                  'allow_add' => true
+                  'allow_add' => true,
               ))
             ->add('save',SubmitType::class, array('label'=>'确认产品'))
             ->getForm();

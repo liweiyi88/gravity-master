@@ -90,21 +90,15 @@
                     </div>
 
                     <div class="form-group">
+                        <label>添加分类</label>
                         <ul class="categories"  data-prototype="{{ form_widget(form.categories.vars.prototype)|e }}" >
                             {% for category in form.categories %}
                                 <li>
-                                    {{ form_row(category.name) }}
+                                    {{ form_row(category.id) }}
                                 </li>
                             {% endfor %}
                         </ul>
                     </div>
-
-
-                    <div class="form-group">
-                        {{ form_label(form.brand) }}
-                        {{ form_widget(form.brand,{'attr':{'class':'form-control'}}) }}
-                    </div>
-
 
 
                     {{ form_widget(form.save,{'attr':{'class':'btn btn-primary'}}) }}
