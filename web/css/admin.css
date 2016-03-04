@@ -220,3 +220,11 @@ li
     margin-bottom:10px;
     list-style-type: none;
 }
+
+
+.delete-category-link
+{
+    position: absolute;
+    right:0;
+    height:20px;
+}

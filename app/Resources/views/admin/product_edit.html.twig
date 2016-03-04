@@ -1,0 +1,64 @@
+{% extends 'backend_layout.html.twig' %}
+{% block rightColumn %}
+    <div class="right-column wrapper">
+        <div class="container right-column-container">
+            <h1 class="right-column title">{{ product.name }}</h1>
+            <hr>
+
+
+            {% for flash_message in app.session.flashbag.get('notice') %}
+                <div class="alert alert-success" role="alert">
+                    <div class="flash-notice">
+                        {{ flash_message }}
+                    </div>
+                </div>
+            {% endfor %}
+
+            <div class="container-fluid">
+                <div class="breadcrumb-wrapper">
+                    <ol class="breadcrumb">
+                        <li><a href="{{ path('admin_product_list') }}">产品列表</a></li>
+                        <li class="active">{{ product.name }}</li>
+                    </ol>
+                </div>
+            </div>
+
+
+            <div class="col-xs-4 brand-edit-form">
+                {{ form_start(form) }}
+                {{ form_errors(form) }}
+                <div class="form-group">
+                    {{ form_label(form.name) }}
+                    {{ form_widget(form.name,{'attr':{'class':'form-control'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(form.price) }}
+                    {{ form_widget(form.price,{'attr':{'class':'form-control'}}) }}
+                </div>
+
+
+                <div class="form-group">
+                    {{ form_label(form.brand) }}
+                    {{ form_widget(form.brand,{'attr':{'class':'form-control'}}) }}
+                </div>
+
+                <div class="form-group">
+                    <label>添加分类</label>
+                    <ul class="categories"  data-prototype="{{ form_widget(form.categories.vars.prototype)|e }}" >
+                        {{ form_widget(form.categories) }}
+                        <li></li>
+                    </ul>
+                </div>
+
+
+                {{ form_widget(form.save,{'attr':{'class':'btn btn-primary'}}) }}
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                {{ form_end(form) }}
+            </div>
+
+
+        </div>
+    </div>
+
+{% endblock %}

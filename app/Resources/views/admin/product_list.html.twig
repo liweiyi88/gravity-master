@@ -47,7 +47,7 @@
                             <td class="cell-product-desc">{{ product.description }}</td>
 
                             <td class="text-right actions">
-                                <a href=""> <button class="btn btn-primary btn-sm">修改分类</button></a>
+                                <a href="{{ path('admin_product_edit',{'id':product.id}) }}"> <button class="btn btn-primary btn-sm">修改分类</button></a>
                                 <button class="btn btn-danger btn-sm"> 删除</button>
                             </td>
                         </tr>

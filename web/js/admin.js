@@ -10,6 +10,7 @@ var $addTagLink = $('<a href="#" class="add_category_link">+添加更多类别</
 var $newLinkLi = $('<li></li>').append($addTagLink);
 
 jQuery(document).ready(function() {
+
     // Get the ul that holds the collection of tags
     $collectionHolder = $('ul.categories');
 
@@ -19,6 +20,7 @@ jQuery(document).ready(function() {
     // count the current form inputs we have (e.g. 2), use that as the new
     // index when inserting a new item (e.g. 2)
     $collectionHolder.data('index', $collectionHolder.find(':input').length);
+
 
 
     $collectionHolder.find('.form-control').each(function() {
@@ -66,7 +68,8 @@ function addTagForm($collectionHolder, $newLinkLi) {
 
 function addTagFormDeleteLink($tagFormLi) {
     var $removeFormA = $('<a href="#" class="delete-category-link">- 删除这个类别</a>');
-    $tagFormLi.append($removeFormA);
+    $tagFormLi.find('.form-control').after($removeFormA);
+
 
     $removeFormA.on('click', function(e) {
         // prevent the link from creating a "#" on the URL
@@ -74,5 +77,7 @@ function addTagFormDeleteLink($tagFormLi) {
 
         // remove the li for the tag form
         $tagFormLi.remove();
+
+        $(this).remove();
     });
 }

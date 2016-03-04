@@ -11,6 +11,22 @@ use Doctrine\ORM\EntityRepository;
 class ProductRepository extends EntityRepository
 {
 
+    public function findByIdWithCategories($id)
+    {
+        $query = $this->getEntityManager()
+            ->createQuery(
+              'SELECT p,c FROM AppBundle:Product p
+               LEFT JOIN p.categories c
+               WHERE
+                p.id = :id
+              '
+            )
+            ->setParameter('id',$id);
+        $result = $query->getOneOrNullResult();
+
+        return $result;
+    }
+
     public function findByName($productName)
     {
         if(empty($productName))
@@ -30,6 +46,7 @@ class ProductRepository extends EntityRepository
 
         return $result;
     }
+
 
     public function findAllWithCategoryBrand()
     {
