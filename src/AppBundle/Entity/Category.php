@@ -116,8 +116,10 @@ class Category
      */
     public function addProduct(\AppBundle\Entity\Product $product)
     {
-        $this->products[] = $product;
-
+        if (!$this->products->contains($product))
+        {
+            $this->products->add($product);
+        }
         return $this;
     }
 

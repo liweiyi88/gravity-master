@@ -92,11 +92,8 @@
                     <div class="form-group">
                         <label>添加分类</label>
                         <ul class="categories"  data-prototype="{{ form_widget(form.categories.vars.prototype)|e }}" >
-                            {% for category in form.categories %}
-                                <li>
-                                    {{ form_row(category.id) }}
-                                </li>
-                            {% endfor %}
+                            {{ form_widget(form.categories) }}
+                            <li></li>
                         </ul>
                     </div>
 

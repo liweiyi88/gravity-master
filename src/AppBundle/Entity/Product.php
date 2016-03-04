@@ -47,7 +47,7 @@ class Product
     /**
      * @var ArrayCollection
      *
-     * @ORM\ManyToMany(targetEntity="Category", inversedBy="products", cascade={"persist", "remove"})
+     * @ORM\ManyToMany(targetEntity="Category", inversedBy="products", cascade={"persist"})
      */
     private $categories;
 
@@ -157,6 +157,9 @@ class Product
      */
     public function addCategory(\AppBundle\Entity\Category $category)
     {
+
+        $category->addProduct($this);
+
         $this->categories[] = $category;
 
         return $this;

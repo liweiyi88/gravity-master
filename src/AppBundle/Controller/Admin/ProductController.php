@@ -30,12 +30,11 @@ class ProductController extends Controller
     {
 
         $products = $this->getDoctrine()->getRepository('AppBundle:Product')->findAll();
-        $category = new Category();
+//        $category = $this->getDoctrine()->getRepository('AppBundle:Category')->findById(2);
 
         $product = new Product();
 
-        $product->addCategory($category);
-
+       // $product->addCategory($category);
 
         $form = $this->createFormBuilder($product)
             ->add('name',TextType::class,array('label'=>'产品名称'))
@@ -54,11 +53,57 @@ class ProductController extends Controller
                 'currency' => ''
             ))
             ->add('categories', CollectionType::class, array(
-                  'entry_type' => CategoryType::class,
+                  'entry_type' => EntityType::class,
+                  'entry_options' => array(
+                      'class' =>'AppBundle:Category',
+                      'query_builder' => function (EntityRepository $er) {
+                          return $er->createQueryBuilder('c')
+                              ->where('c.parent IS NOT NULL');
+                      },
+                      'choice_label' => 'name',
+                      'label' => false,
+                      'attr'      => array('class' => 'form-control'),
+                      'required' => false,
+                      'placeholder'=>'请选择分类'
+                  ),
+                  'by_reference' => false,
                   'allow_add' => true,
+                  'allow_delete' => true,
+                  'label'=>false
               ))
+
             ->add('save',SubmitType::class, array('label'=>'确认产品'))
             ->getForm();
+
+        $form->handleRequest($request);
+
+        if($form->isValid())
+        {
+            $em = $this->getDoctrine()->getManager();
+
+           // dump($product);
+
+
+            $em->persist($product);
+            dump($product);
+
+            $em->flush();
+
+
+
+            $this->addFlash(
+                'notice',
+                '添加成功!'
+            );
+
+
+
+
+
+            return $this->redirectToRoute('admin_product_list');
+        }
+
+
 
         return $this->render('admin/product_list.html.twig',array('products'=>$products, 'form'=>$form->createView()));
     }

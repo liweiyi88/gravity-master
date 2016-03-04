@@ -20,6 +20,11 @@ jQuery(document).ready(function() {
     // index when inserting a new item (e.g. 2)
     $collectionHolder.data('index', $collectionHolder.find(':input').length);
 
+
+    $collectionHolder.find('.form-control').each(function() {
+        addTagFormDeleteLink($(this));
+    });
+
     $addTagLink.on('click', function(e) {
         // prevent the link from creating a "#" on the URL
         e.preventDefault();
@@ -55,4 +60,19 @@ function addTagForm($collectionHolder, $newLinkLi) {
     // Display the form in the page in an li, before the "Add a tag" link li
     var $newFormLi = $('<li></li>').append(newForm);
     $newLinkLi.before($newFormLi);
+
+    addTagFormDeleteLink($newFormLi);
+}
+
+function addTagFormDeleteLink($tagFormLi) {
+    var $removeFormA = $('<a href="#" class="delete-category-link">- 删除这个类别</a>');
+    $tagFormLi.append($removeFormA);
+
+    $removeFormA.on('click', function(e) {
+        // prevent the link from creating a "#" on the URL
+        e.preventDefault();
+
+        // remove the li for the tag form
+        $tagFormLi.remove();
+    });
 }
