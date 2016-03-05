@@ -31,20 +31,20 @@
                 <div class="row product-row">
                     <div class="col-sm-6 image-container">
                         <div class="image-inner">
-                            <img src="{{ asset('uploads/products/a2.jpg') }}" alt="" />
+                            <img src="{{ asset('uploads/products/'~ product.path ) }}">
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <h2>A2 2段奶粉</h2>
+                        <h2>{{ product.name }}</h2>
                         <hr>
 
                         <p class="product-price">
-                            本店零售价 ¥170
+                            售价 ¥{{ product.price }}
                         </p>
 
                         <hr>
                         <p class="product-desc">
-                            新旧包装，随机发货！A2奶粉在澳洲被称为奶粉中的爱马仕，是新西兰的高端奶粉。奶粉中特有的A2-βL酪蛋白，能更天然的呵护消化吸收系统，全方位保护宝宝的小肚子。要知道A2-βL酪蛋白的奶源非常稀缺，西方奶牛中只有约为30%能产出哦~
+                            {{ product.description }}
                         </p>
 
 

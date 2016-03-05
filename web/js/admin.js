@@ -53,6 +53,18 @@ $(document).ready(function()
     $('#add-brand-modal').on('shown.bs.modal', function () {
         $('.form-control').focus()
     })
+
+
+    $('body').on('mouseover','.cell-product-name i',function()
+    {
+        $(this).parent().find('img').show();
+    });
+
+
+    $('body').on('mouseout','.cell-product-name i',function()
+    {
+        $(this).parent().find('img').hide();
+    });
 });
 
 

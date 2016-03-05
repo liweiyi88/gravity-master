@@ -140,6 +140,7 @@ class ProductController extends Controller
         {
             foreach($products as $product)
             {
+                $productArray['id'] = $product->getId();
                 $productArray['name'] = $product->getName();
                 $productArray['price'] = $product->getPrice();
                 $productArray['description'] = $product->getDescription();

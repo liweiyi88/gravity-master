@@ -107,10 +107,10 @@ $(document).ready(function()
             timeout = setTimeout(function() {
                 if(text != '')
                 {
-                    console.log(text);
                     $('.result-text').html('<p>搜索中... <i class="fa fa-circle-o-notch fa-spin"></i></p>');
                     // Do AJAX shit here
                     var url = $('#ajax-product').val();
+                    var homePage = $('#homepage-url').val();
                     // run ajax query to update b_made time
                     $.ajax({
                         type: "POST",
@@ -130,7 +130,7 @@ $(document).ready(function()
                                 var html = '<ul>';
                                 for(var i=0; i< data.length; i++)
                                 {
-                                    html += '<li><a href="https://www.google.com.au">'+data[i].name+'</a></li>';
+                                    html += '<li><a href="'+homePage+'product/detail/'+data[i].id+'">'+data[i].name+'</a></li>';
                                 }
 
                                 html += '</ul>';

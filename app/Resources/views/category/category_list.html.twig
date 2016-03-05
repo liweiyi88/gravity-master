@@ -37,72 +37,35 @@
     </div>
 
     <div class="container">
-        <div class="col-xs-12 col-sm-6 col-md-3 product-block">
-            <div class="thumbnail">
-                <div class="thumbnail-header"></div>
-                <a href="{{ path('product_detail',{'id':'2'}) }}"><img src="{{ asset('uploads/products/a2.jpg') }}" alt="..."></a>
-            </div>
-            <h4>A2 有机奶粉二段</h4>
-            <p>$20 AUD</p>
-        </div>
+        {% if category.products is not empty %}
+            {% for product in category.products %}
+                <div class="col-xs-12 col-sm-6 col-md-3 product-block">
+                    <div class="thumbnail">
+                        <div class="thumbnail-header"></div>
+                        <a href="{{ path('product_detail',{'id':product.id}) }}"><img src="{{ asset('uploads/products/'~ product.path ) }}"></a>
+                    </div>
+                    <h4>{{ product.name }}</h4>
+                    <p>¥ {{ product.price }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
 
-        <div class="col-xs-12 col-sm-6 col-md-3 product-block">
-            <div class="thumbnail">
-                <div class="thumbnail-header"></div>
-                <a href="{{ path('product_detail',{'id':'2'}) }}"><img src="{{ asset('uploads/products/a2.jpg') }}" alt="..."></a>
-            </div>
-            <h4>A2 有机奶粉二段</h4>
-            <p>$20 AUD</p>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-3 product-block">
-            <div class="thumbnail">
-                <div class="thumbnail-header"></div>
-                <a href="{{ path('product_detail',{'id':'2'}) }}"><img src="{{ asset('uploads/products/a2.jpg') }}" alt="..."></a>
-            </div>
-            <h4>A2 有机奶粉二段</h4>
-            <p>$20 AUD</p>
-        </div>
-
-
-        <div class="col-xs-12 col-sm-6 col-md-3 product-block">
-            <div class="thumbnail">
-                <div class="thumbnail-header"></div>
-                <a href="{{ path('product_detail',{'id':'2'}) }}"><img src="{{ asset('uploads/products/a2.jpg') }}" alt="..."></a>
-            </div>
-            <h4>A2 有机奶粉二段</h4>
-            <p>$20 AUD</p>
-        </div>
+        {% if category.children is not empty %}
+            {% for category in category.children %}
+                {% for product in category.products %}
+                    <div class="col-xs-12 col-sm-6 col-md-3 product-block">
+                        <div class="thumbnail">
+                            <div class="thumbnail-header"></div>
+                            <a href="{{ path('product_detail',{'id':product.id}) }}"><img src="{{ asset('uploads/products/'~ product.path ) }}"></a>
+                        </div>
+                        <h4>{{ product.name }}</h4>
+                        <p>¥ {{ product.price }}</p>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
 
 
-        <div class="col-xs-12 col-sm-6 col-md-3 product-block">
-            <div class="thumbnail">
-                <div class="thumbnail-header"></div>
-                <a href="{{ path('product_detail',{'id':'2'}) }}"><img src="{{ asset('uploads/products/a2.jpg') }}" alt="..."></a>
-            </div>
-            <h4>A2 有机奶粉二段</h4>
-            <p>$20 AUD</p>
-        </div>
-
-
-        <div class="col-xs-12 col-sm-6 col-md-3 product-block">
-            <div class="thumbnail">
-                <div class="thumbnail-header"></div>
-                <a href="{{ path('product_detail',{'id':'2'}) }}"><img src="{{ asset('uploads/products/a2.jpg') }}" alt="..."></a>
-            </div>
-            <h4>A2 有机奶粉二段</h4>
-            <p>$20 AUD</p>
-        </div>
-
-
-        <div class="col-xs-12 col-sm-6 col-md-3 product-block">
-            <div class="thumbnail">
-                <div class="thumbnail-header"></div>
-                <a href="{{ path('product_detail',{'id':'2'}) }}"><img src="{{ asset('uploads/products/a2.jpg') }}" alt="..."></a>
-            </div>
-            <h4>A2 有机奶粉二段</h4>
-            <p>$20 AUD</p>
-        </div>
     </div>
 
 

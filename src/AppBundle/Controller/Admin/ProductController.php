@@ -19,6 +19,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class ProductController extends Controller
 {
@@ -50,6 +51,7 @@ class ProductController extends Controller
                 'required' => false,
                 'label' => '产品介绍'
             ))
+            ->add('file',FileType::class,array('label'=>'产品图片','required'=>false))
             ->add('categories', CollectionType::class, array(
                   'entry_type' => EntityType::class,
                   'entry_options' => array(
@@ -78,6 +80,9 @@ class ProductController extends Controller
         if($form->isValid())
         {
             $em = $this->getDoctrine()->getManager();
+
+            $product->upload();
+
             $em->persist($product);
             $em->flush();
 
@@ -122,6 +127,7 @@ class ProductController extends Controller
                 'required' => false,
                 'label' => '产品介绍'
             ))
+            ->add('file',FileType::class,array('label'=>'产品图片','required'=>false))
             ->add('categories', CollectionType::class, array(
                 'entry_type' => EntityType::class,
                 'entry_options' => array(
@@ -151,6 +157,7 @@ class ProductController extends Controller
         if($form->isValid())
         {
             $em = $this->getDoctrine()->getManager();
+            $product->upload();
             $em->persist($product);
             $em->flush();
 

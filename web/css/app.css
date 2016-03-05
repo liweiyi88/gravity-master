@@ -251,6 +251,7 @@ body
 .result-wrapper li
 {
     list-style-type: none;
+    margin-bottom: 5px;
 }
 
 
@@ -304,6 +305,17 @@ body
     display: inline-block;
     margin-right: 20px;
     margin-top:5px;
+}
+
+.sub-category-product li a
+{
+    color:black !important;
+}
+
+.sub-category-product li a:hover
+{
+    background-color: transparent !important;
+    color:black !important;
 }
 
 .sub-category-span

@@ -150,3 +150,9 @@
 {
     border-radius: 0px;
 }
+
+
+textarea.form-control
+{
+    min-height: 200px;
+}
