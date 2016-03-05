@@ -69,6 +69,11 @@ body, html
     background-color: black;
 }
 
+.nav-primary li
+{
+    margin-bottom: 10px;
+}
+
 .nav-secondary
 {
     cursor: pointer;
@@ -217,7 +222,7 @@ ul
 
 li
 {
-    margin-bottom:10px;
+    margin-bottom:25px;
     list-style-type: none;
 }
 
@@ -225,6 +230,17 @@ li
 .delete-category-link
 {
     position: absolute;
-    right:0;
+    right:15px;
     height:20px;
+}
+
+
+.breadcrumb li
+{
+    margin:0;
+}
+
+#form_categories div
+{
+    margin-bottom: 25px;
 }

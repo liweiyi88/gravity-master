@@ -38,7 +38,7 @@ class CategoryController extends Controller
                 'choice_label' => 'name',
                 'required' => false,
                 'placeholder' => '无父类',
-                'label' => '添加父类'
+                'label' => '添加父类',
             ))
             ->add('save',SubmitType::class, array('label'=>'确认种类'))
             ->getForm();

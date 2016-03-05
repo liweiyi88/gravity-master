@@ -18,6 +18,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class ProductController extends Controller
 {
@@ -43,6 +44,11 @@ class ProductController extends Controller
             ->add('price',MoneyType::class, array(
                 'label' => '产品价格',
                 'currency' => ''
+            ))
+            ->add('description',TextareaType::class,array(
+                'attr' => array('class' => 'form-control'),
+                'required' => false,
+                'label' => '产品介绍'
             ))
             ->add('categories', CollectionType::class, array(
                   'entry_type' => EntityType::class,
@@ -110,6 +116,11 @@ class ProductController extends Controller
             ->add('price',MoneyType::class, array(
                 'label' => '产品价格',
                 'currency' => ''
+            ))
+            ->add('description',TextareaType::class,array(
+                'attr' => array('class' => 'form-control'),
+                'required' => false,
+                'label' => '产品介绍'
             ))
             ->add('categories', CollectionType::class, array(
                 'entry_type' => EntityType::class,

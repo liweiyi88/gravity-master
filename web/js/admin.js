@@ -21,6 +21,8 @@ jQuery(document).ready(function() {
     // index when inserting a new item (e.g. 2)
     $collectionHolder.data('index', $collectionHolder.find(':input').length);
 
+    $('#form_categories').find('.form-control').after('<a href="#" class="delete-category-link">- 删除这个类别</a>');
+
 
 
     $collectionHolder.find('.form-control').each(function() {
@@ -34,6 +36,15 @@ jQuery(document).ready(function() {
         // add a new tag form (see next code block)
         addTagForm($collectionHolder, $newLinkLi);
     });
+});
+
+
+$('body').on('click','.delete-category-link',function(e)
+{
+    e.preventDefault();
+    $(this).prev('select').remove();
+    $(this).remove();
+
 });
 
 
