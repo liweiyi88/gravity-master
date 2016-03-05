@@ -62,7 +62,9 @@
                                                             <h4 class="sub-category-title"><a href="{{ path('category_list',{'id':child.id}) }}"> {{child.name}}</a></h4>
                                                             <ul class="sub-category-product">
                                                                 {% for product in child.products %}
-                                                                    <li><a href="{{ path('product_detail',{'id':product.id}) }}">{{product.name}}</a></li>
+                                                                    {% if product.isShownNav == true %}
+                                                                        <li><a href="{{ path('product_detail',{'id':product.id}) }}">{{product.name}}</a></li>
+                                                                    {% endif %}
                                                                 {% endfor %}
                                                             </ul>
                                                         </div>

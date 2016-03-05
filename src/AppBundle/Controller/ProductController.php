@@ -59,7 +59,6 @@ class ProductController extends Controller
             }
         }
 
-
         // replace this example code with whatever you need
         return $this->render('product/index.html.twig',array(
                                                      'categories' => $categories,

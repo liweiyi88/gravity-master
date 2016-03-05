@@ -47,6 +47,14 @@ class Product
 
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_show_nav", type="boolean", options={"default"=true})
+     */
+    private $isShownNav;
+
+
+    /**
      * @var ArrayCollection
      *
      * @ORM\ManyToMany(targetEntity="Category", inversedBy="products", cascade={"persist"})
@@ -323,5 +331,29 @@ class Product
 
         // clean up the file property as you won't need it anymore
         $this->file = null;
+    }
+
+    /**
+     * Set isShownNav
+     *
+     * @param boolean $isShownNav
+     *
+     * @return Product
+     */
+    public function setIsShownNav($isShownNav)
+    {
+        $this->isShownNav = $isShownNav;
+
+        return $this;
+    }
+
+    /**
+     * Get isShownNav
+     *
+     * @return boolean
+     */
+    public function getIsShownNav()
+    {
+        return $this->isShownNav;
     }
 }

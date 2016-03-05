@@ -12,6 +12,7 @@ use Doctrine\ORM\EntityRepository;
 use AppBundle\Entity\Product;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -50,6 +51,10 @@ class ProductController extends Controller
                 'attr' => array('class' => 'form-control'),
                 'required' => false,
                 'label' => '产品介绍'
+            ))
+            ->add('isShownNav',CheckboxType::class,array(
+                'label' => '是否显示在主页导航栏',
+                'required' => false
             ))
             ->add('file',FileType::class,array('label'=>'产品图片','required'=>false))
             ->add('categories', CollectionType::class, array(
@@ -126,6 +131,10 @@ class ProductController extends Controller
                 'attr' => array('class' => 'form-control'),
                 'required' => false,
                 'label' => '产品介绍'
+            ))
+            ->add('isShownNav',CheckboxType::class,array(
+                'label' => '是否显示在主页导航栏',
+                'required' => false
             ))
             ->add('file',FileType::class,array('label'=>'产品图片','required'=>false))
             ->add('categories', CollectionType::class, array(

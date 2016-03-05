@@ -257,3 +257,14 @@ li
 {
     cursor: pointer;
 }
+
+
+.checkbox label
+{
+    padding-left:0;
+}
+
+#form_isShownNav
+{
+    margin-left:10px;
+}

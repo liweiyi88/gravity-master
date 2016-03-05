@@ -48,6 +48,11 @@
                     {{ form_widget(form.description,{'attr':{'class':'form-control'}}) }}
                 </div>
 
+                <div class="checkbox">
+                    {{ form_label(form.isShownNav) }}
+                    {{ form_widget(form.isShownNav) }}
+                </div>
+
                 <div class="form-group">
                     {{ form_label(form.file) }}
                     {{ form_widget(form.file) }}
