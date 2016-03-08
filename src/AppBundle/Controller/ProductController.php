@@ -111,12 +111,39 @@ class ProductController extends Controller
         }
 
         $product = $this->getDoctrine()->getRepository('AppBundle:Product')->findById($id);
+        $subCategoryArr = array();
+
+        if($product->getCategories() != null)
+        {
+            foreach($product->getCategories() as $category )
+            {
+                if($category->getParent() != null)
+                {
+                    foreach($category->getParent()->getChildren() as $c )
+                    {
+                        $isAdd = true;
+                        foreach($subCategoryArr as $s)
+                        {
+                            if($s->getId() == $c->getId())
+                            {
+                                $isAdd = false;
+                            }
+                        }
+                        if($isAdd)
+                        {
+                            $subCategoryArr[] = $c;
+                        }
+                    }
+                }
+            }
+        }
 
         return $this->render('product/product_detail.html.twig',array(
             'categories' => $categories,
             'brands' => $brands,
             'settings' => $homepageSettings,
-            'product' => $product
+            'product' => $product,
+            'subCategories' => $subCategoryArr
         ));
 
 

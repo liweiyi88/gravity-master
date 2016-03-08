@@ -13,15 +13,9 @@
         </div>
 
         <div class="container sub-category-link">
-            {% if product.categories is not empty %}
-                {% for category in product.categories %}
-                    {% if category.parent is not empty %}
-                        {% for c in category.parent.children  %}
-                            <span class="sub-category-span"><a href="{{ path('category_list',{'id':c.id}) }}">{{ c.name }}</a></span>
-                         {% endfor %}
-                    {% else %}
-                            <span class="sub-category-span"><a href="{{ path('category_list',{'id':category.id}) }}">{{ category.name }}</a></span>
-                    {% endif %}
+            {% if subCategories is not empty %}
+                {% for category in subCategories %}
+                    <span class="sub-category-span"><a href="{{ path('category_list',{'id':category.id}) }}">{{ category.name }}</a></span>
                 {% endfor %}
             {% endif %}
         </div>
