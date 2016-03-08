@@ -32,6 +32,7 @@ class ProductController extends Controller
         $products = $this->getDoctrine()->getRepository('AppBundle:Product')->findAllWithCategoryBrand();
 
         $product = new Product();
+        $product->setIsShownNav(true);
         $form = $this->createFormBuilder($product)
             ->add('name',TextType::class,array('label'=>'产品名称'))
             ->add('brand', EntityType::class,array(
@@ -172,10 +173,10 @@ class ProductController extends Controller
 
             $this->addFlash(
                 'notice',
-                '添加成功!'
+                '修改成功!'
             );
 
-            return $this->redirectToRoute('admin_product_edit',array('id'=>$id));
+            return $this->redirectToRoute('admin_product_list');
         }
 
         return $this->render('admin/product_edit.html.twig',array('product'=>$product, 'form'=>$form->createView()));

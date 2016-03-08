@@ -55,13 +55,13 @@ $(document).ready(function()
     })
 
 
-    $('body').on('mouseover','.cell-product-name i',function()
+    $('body').on('mouseover','.cell-product-name .image-icon',function()
     {
         $(this).parent().find('img').show();
     });
 
 
-    $('body').on('mouseout','.cell-product-name i',function()
+    $('body').on('mouseout','.cell-product-name .image-icon',function()
     {
         $(this).parent().find('img').hide();
     });

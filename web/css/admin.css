@@ -262,6 +262,7 @@ li
 .checkbox label
 {
     padding-left:0;
+    font-weight: 700;
 }
 
 #form_isShownNav

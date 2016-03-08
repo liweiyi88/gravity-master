@@ -36,7 +36,7 @@
                         <tr>
                             <td class="cell-product-name">{{ product.name }}
                                 {% if product.path is not null %}
-                                    <i class="fa fa-picture-o"><img src="{{ asset('uploads/products/'~ product.path ) }}"></i>
+                                    <i class="fa fa-picture-o image-icon"><img src="{{ asset('uploads/products/'~ product.path ) }}"></i>
                                 {% endif %}
                                 {% if product.isShownNav %}
                                     <i class="fa fa-eye"></i>

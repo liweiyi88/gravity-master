@@ -536,6 +536,7 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 .thumbnail img
 {
     padding:10px;
+    max-height:245px;
 }
 
 

@@ -101,7 +101,7 @@ class CategoryController extends Controller
                 '修改成功!'
             );
 
-            return $this->redirectToRoute('admin_category_edit',array('id'=>$id));
+            return $this->redirectToRoute('admin_category_list');
         }
 
         return $this->render('admin/category_edit.html.twig',array('form'=>$form->createView(),'category'=>$category));
