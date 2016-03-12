@@ -20,51 +20,11 @@ class ProductController extends Controller
      */
     public function indexAction()
     {
-
-        $categories = $this->getDoctrine()->getRepository('AppBundle:Category')->findAll();
+        $settings = $this->getDoctrine()->getRepository('AppBundle:HomepageSettings')->findSettings();
         $brands = $this->getDoctrine()->getRepository('AppBundle:Brand')->findAll();
-        $homepageSettings = $this->getDoctrine()->getRepository('AppBundle:HomepageSettings')->findSettings();
-
-
-        foreach($categories as $category)
-        {
-            if($category->getParent() == null)
-            {
-                $categoryBrands = array();
-                foreach($category->getChildren() as $child)
-                {
-                    foreach($child->getProducts() as $product)
-                    {
-                        foreach($brands as $brand)
-                        {
-                            if($brand->getName() == $product->getBrand()->getName())
-                            {
-                                $isAdd = true;
-                                foreach($categoryBrands as $categoryBrand)
-                                {
-                                    if($categoryBrand->getName() == $brand->getName())
-                                    {
-                                        $isAdd = false;
-                                    }
-                                }
-                                if($isAdd)
-                                {
-                                    $categoryBrands[] = $brand;
-                                }
-                            }
-                        }
-                    }
-                }
-                $category->setBrands($categoryBrands);
-            }
-        }
-
-        // replace this example code with whatever you need
         return $this->render('product/index.html.twig',array(
-                                                     'categories' => $categories,
-                                                     'brands' => $brands,
-                                                     'settings' => $homepageSettings
-        ));
+            'settings'=>$settings,'brands'=>$brands)
+        );
     }
 
 
@@ -73,42 +33,6 @@ class ProductController extends Controller
      */
     public function detailAction($id)
     {
-        $categories = $this->getDoctrine()->getRepository('AppBundle:Category')->findAll();
-        $brands = $this->getDoctrine()->getRepository('AppBundle:Brand')->findAll();
-        $homepageSettings = $this->getDoctrine()->getRepository('AppBundle:HomepageSettings')->findSettings();
-
-        foreach($categories as $eachCategory)
-        {
-            if($eachCategory->getParent() == null)
-            {
-                $categoryBrands = array();
-                foreach($eachCategory->getChildren() as $child)
-                {
-                    foreach($child->getProducts() as $product)
-                    {
-                        foreach($brands as $brand)
-                        {
-                            if($brand->getName() == $product->getBrand()->getName())
-                            {
-                                $isAdd = true;
-                                foreach($categoryBrands as $categoryBrand)
-                                {
-                                    if($categoryBrand->getName() == $brand->getName())
-                                    {
-                                        $isAdd = false;
-                                    }
-                                }
-                                if($isAdd)
-                                {
-                                    $categoryBrands[] = $brand;
-                                }
-                            }
-                        }
-                    }
-                }
-                $eachCategory->setBrands($categoryBrands);
-            }
-        }
 
         $product = $this->getDoctrine()->getRepository('AppBundle:Product')->findById($id);
         $subCategoryArr = array();
@@ -139,9 +63,6 @@ class ProductController extends Controller
         }
 
         return $this->render('product/product_detail.html.twig',array(
-            'categories' => $categories,
-            'brands' => $brands,
-            'settings' => $homepageSettings,
             'product' => $product,
             'subCategories' => $subCategoryArr
         ));
@@ -177,6 +98,4 @@ class ProductController extends Controller
         // replace this example code with whatever you need
         return new JsonResponse($json);
     }
-
-
 }

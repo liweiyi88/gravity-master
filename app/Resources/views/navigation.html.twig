@@ -1,0 +1,70 @@
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid custom-nav">
+        <div class="navbar-header">
+            <span></span>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span><a class="navbar-brand" href="{{ path('homepage') }}">{{ settings.tradingName }}</a></span>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+            {% for category in categories %}
+                {% if category.parent == null %}
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="{{ path('category_list',{'id':category.id}) }}" class="dropdown-toggle" >{{ category.name }}<span class="caret"></span></a>
+                            <div class="dropdown-menu more">
+                                <div class="row more-inner">
+                                    <div class="sub-category col-xs-12">
+                                        {% for child in category.children %}
+                                            <div class="sub-category-inner col-xs-12">
+                                                <h4 class="sub-category-title"><a href="{{ path('category_list',{'id':child.id}) }}"> {{child.name}}</a></h4>
+                                                <ul class="sub-category-product">
+                                                    {% for product in child.products %}
+                                                        {% if product.isShownNav == true %}
+                                                            <li><a href="{{ path('product_detail',{'id':product.id}) }}">{{product.name}}</a></li>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        {% endfor %}
+                                    </div><!-- end of sub-category --->
+
+                                    <div class="brand col-xs-12">
+                                        <div class="brand-inner col-xs-12">
+                                            <div class="col-xs-2 brand-title-container">
+                                                <h4 class="brand-title">品牌</h4>
+                                            </div>
+                                            <div class="col-xs-10">
+                                                {% for brand in category.brands %}
+                                                    <div class="col-xs-6 brand-label">
+                                                        <a href="{{ path('brand_detail',{'id':brand.id}) }}">
+                                                                 <span class="label label-primary">
+                                                                   {% if brand is not null %}
+                                                                       {{ brand.name }}
+                                                                   {% endif %}
+                                                                 </span>
+                                                        </a>
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div><!-- end of brand -->
+
+
+
+                                </div><!-- end of more-inner -->
+                            </div><!-- end of more -->
+                        </li>
+                    </ul>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+    </div><!--/.nav-collapse -->
+</nav>
