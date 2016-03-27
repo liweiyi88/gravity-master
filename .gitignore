@@ -5,3 +5,5 @@ src/AppBundle/DataFixtures
 app/config/parameters.yml
 composer.lock
 var
+composer.phar
+.DS_Store
