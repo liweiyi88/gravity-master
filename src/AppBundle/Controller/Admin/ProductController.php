@@ -87,8 +87,6 @@ class ProductController extends Controller
         {
             $em = $this->getDoctrine()->getManager();
 
-            $product->upload();
-
             $em->persist($product);
             $em->flush();
 
@@ -167,7 +165,7 @@ class ProductController extends Controller
         if($form->isValid())
         {
             $em = $this->getDoctrine()->getManager();
-            $product->upload();
+
             $em->persist($product);
             $em->flush();
 

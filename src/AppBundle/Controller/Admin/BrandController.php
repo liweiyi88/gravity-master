@@ -31,9 +31,7 @@ class BrandController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-
-            $brand->upload();
-
+            
             $em->persist($brand);
             $em->flush();
 
@@ -72,8 +70,6 @@ class BrandController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-
-            $brand->upload();
 
             $em->persist($brand);
             $em->flush();
