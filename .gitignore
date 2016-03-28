@@ -5,5 +5,7 @@ src/AppBundle/DataFixtures
 app/config/parameters.yml
 composer.lock
 var
+var/bootstrap.php.cache
+var/SymfonyRequirements.php
 composer.phar
 .DS_Store
