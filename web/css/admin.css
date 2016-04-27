@@ -25,6 +25,11 @@ body, html
     min-height: 100%;
 }
 
+.sidebar-widget
+{
+    padding-top:30px;
+}
+
 .vg-logo
 {
     background-color: #27AA67;
@@ -48,6 +53,10 @@ body, html
     text-align: center;
 }
 
+.nav-primary
+{
+    height:80px;
+}
 
 .nav-primary a
 {
@@ -87,7 +96,7 @@ body, html
 
 .nav-primary li  a:hover
 {
-    background-color: black;
+    background-color: transparent;
 }
 
 .nav-primary li
@@ -137,7 +146,7 @@ i
 .right-column.wrapper
 {
     min-height: 100%;
-    width: calc(100% - 200px);
+    width: calc(100% - 80px);
 }
 
 
