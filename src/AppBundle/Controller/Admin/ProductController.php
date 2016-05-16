@@ -25,11 +25,24 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 class ProductController extends Controller
 {
     /**
-     * @Route("/admin/product/list", name="admin_product_list")
+     * @Route("/admin/product/list/{page}", name="admin_product_list")
      */
-    public function listAction(Request $request)
+    public function listAction(Request $request, $page = 1)
     {
-        $products = $this->getDoctrine()->getRepository('AppBundle:Product')->findAllWithCategoryBrand();
+//        print $page;
+        $products = $this->getDoctrine()->getRepository('AppBundle:Product')->findAllWithCategoryBrand($page);
+
+        // You can also call the count methods (check PHPDoc for `paginate()`)
+        $totalProductsReturned = $products->getIterator()->count(); # Total fetched (ie: `5` posts)
+        $totalProducts = $products->count(); # Count of ALL posts (ie: `20` posts)
+        $iterator = $products->getIterator(); # ArrayIterator
+
+        // ... get posts from DB...
+        $limit = 5;
+        $maxPages = ceil($totalProducts / $limit);
+        $thisPage = $page;
+        // ... render view pass through the 3 above variables to calculate pages
+        // return $this->render('view.twig.html', compact('categories', 'maxPages', 'thisPage'));
 
         $product = new Product();
         $product->setIsShownNav(true);
@@ -76,7 +89,7 @@ class ProductController extends Controller
                   'allow_add' => true,
                   'allow_delete' => true,
                   'label'=>false
-              ))
+            ))
 
             ->add('save',SubmitType::class, array('label'=>'确认产品'))
             ->getForm();
@@ -99,8 +112,8 @@ class ProductController extends Controller
         }
 
 
-
-        return $this->render('admin/product_list.html.twig',array('products'=>$products, 'form'=>$form->createView()));
+        return $this->render('admin/product_list.html.twig',array('products'=>$products,
+            'maxPages'=>$maxPages, 'thisPage'=>$thisPage, 'form'=>$form->createView()));
     }
 
 
