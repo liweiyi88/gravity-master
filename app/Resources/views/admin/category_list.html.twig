@@ -48,6 +48,11 @@
             </div>
 
 
+            {# display navigation #}
+            <div class="navigation">
+                {{ knp_pagination_render(categories) }}     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Total: {{ categories.getTotalItemCount }}
+            </div>
+
         </div>
     </div>
 

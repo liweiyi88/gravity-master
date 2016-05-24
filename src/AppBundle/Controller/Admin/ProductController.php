@@ -29,7 +29,6 @@ class ProductController extends Controller
      */
     public function listAction(Request $request, $page = 1)
     {
-//        print $page;
         $products = $this->getDoctrine()->getRepository('AppBundle:Product')->findAllWithCategoryBrand($page);
 
         // You can also call the count methods (check PHPDoc for `paginate()`)

@@ -61,7 +61,14 @@ class CategoryController extends Controller
 
         }
 
-        $categories = $this->getDoctrine()->getRepository('AppBundle:Category')->findAll();
+        $query = $this->getDoctrine()->getRepository('AppBundle:Category')->findAll();
+
+        $paginator  = $this->get('knp_paginator');
+        $categories = $paginator->paginate(
+            $query, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            5 /*limit per page*/
+        );
 
         return $this->render('admin/category_list.html.twig',array('form'=>$form->createView(),'categories'=>$categories));
     }
