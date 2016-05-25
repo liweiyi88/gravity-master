@@ -49,8 +49,9 @@
 
 
             {# display navigation #}
-            <div class="navigation">
-                {{ knp_pagination_render(categories) }}     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Total: {{ categories.getTotalItemCount }}
+            <div class="navigation text-center">
+                {{ knp_pagination_render(categories) }}
+                {#Total: {{ categories.getTotalItemCount }}#}
             </div>
 
         </div>
