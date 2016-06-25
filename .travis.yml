@@ -3,6 +3,13 @@ php:
   - 5.6
   - 7.0
 
+services:
+    - mysql
+
+
+before_install:
+  - mysql -e "create database IF NOT EXISTS symfony;" -uroot
+
 before_script:
   - composer install
 
