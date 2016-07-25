@@ -1,0 +1,27 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+<div class="container">
+    <div class="row form-signin">
+        {% if form_errors(form.email) is not empty or form_errors(form.username) is not empty %}
+            <div class="security-error">{{ form_errors(form.email) }} {{ form_errors(form.username) }} </div>
+        {% endif %}
+
+    {{ form_errors(form) }}
+    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register security-form user-input'}}) }}
+    {{ form_widget(form.email,{'attr':{'class':'form-control user-input','placeholder':'Email'}} )}}
+    {{ form_widget(form.username,{'attr':{'class':'form-control user-input','placeholder':'Username'}}) }}
+    {{ form_widget(form.plainPassword.first,{'attr':{'class':'form-control user-input','placeholder':'Password'}}) }}
+    {{ form_widget(form.plainPassword.second,{'attr':{'class':'form-control user-input','placeholder':'Confirm your password'}}) }}
+    <div>
+        <input type="submit" class="btn btn-lg btn-default btn-block" value="{{ 'registration.submit'|trans }}" />
+    </div>
+        <p class="security-nav">
+            <a href="{{ path('fos_user_security_login') }}">Login</a>
+            <a href="{{ path('fos_user_resetting_request') }}">Lost your password?</a>
+        </p>
+    {{ form_end(form) }}
+    </div>
+</div>
+{% endblock fos_user_content %}

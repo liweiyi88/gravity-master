@@ -1,0 +1,120 @@
+body
+{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #27AA67;
+}
+
+.user-input, textarea {
+
+    color: #000000;
+    background-color : #27AA67;
+    height:40px;
+    border: 0px;
+    box-shadow: none !important;
+    padding-right: 0px;
+    padding-left: 0px;
+    border-bottom: 1px  solid #000000 !important; ;
+    border-radius: 0;
+}
+
+.user-input:focus {
+    background-color: white;
+
+}
+
+::-webkit-input-placeholder {
+    color: #000000 !important;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: #000000 !important;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    color: #000000 !important;
+}
+
+:-ms-input-placeholder {
+    color: #000000 !important;
+}
+
+.security-error
+{
+    padding: 8px 24px;
+    border-left:4px solid #333;
+}
+.security-error ul
+{
+    padding-left: 0px;
+    list-style-type: none;
+}
+
+.form-signin, .form-reset-password
+{
+    max-width: 330px;
+    padding: 50px 15px 0 15px;
+    margin: 0px auto;
+}
+
+.form-signin .form-control, .form-reset-password .form-control
+{
+    margin-bottom: 35px;
+    height: 46px;
+}
+
+.form-signin label
+{
+    font-weight: 400;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.security-form
+{
+    margin-top: 8%;
+}
+
+.security-nav
+{
+    padding: 16px 0 0 0;
+}
+
+.security-nav a
+{
+    padding-top:10px;
+    color: #333;
+    display: block;
+    height:30px;
+    outline: 0;
+}
+
+
+.login-links
+{
+    margin-top: 20px;
+}
+
+
+.reset-password .back-link
+{
+    margin-top: 20px;
+}
+
+.reset-password .reset-information
+{
+    margin-bottom: 20px;
+}
+
+.reset-password h3
+{
+    margin-bottom: 20px;
+}
+
+
+.message-block
+{
+    width:500px;
+    font-size: 16px;
+    font-weight: 700;
+}

@@ -1,0 +1,12 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+<div class="container text-center message-block">
+    <p class="security-nav">
+        {{ 'registration.confirmed'|trans({'%username%': user.username}) }}<br>
+        <a href="{{ path('homepage') }}" style="text-decoration: underline;">Click to login</a>
+    </p>
+</div>
+{% endblock fos_user_content %}

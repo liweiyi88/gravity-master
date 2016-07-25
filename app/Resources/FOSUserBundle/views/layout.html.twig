@@ -2,32 +2,30 @@
 <html>
 <head>
     <meta charset="UTF-8" />
+    <title>{% block title %}Login App{% endblock %}</title>
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/security.css') }}" rel="stylesheet" />
 </head>
 <body>
-<div>
-    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-        <a href="{{ path('fos_user_security_logout') }}">
-            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-        </a>
-    {% else %}
-        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-    {% endif %}
-</div>
 
-{% if app.request.hasPreviousSession %}
-    {% for type, messages in app.session.flashbag.all() %}
+<div class="container text-center message-block">
+    {% for type, messages in app.session.flashBag.all %}
         {% for message in messages %}
-            <div class="flash-{{ type }}">
-                {{ message }}
+            <div class="{{ type }}">
+                {{ message|trans({}, 'FOSUserBundle') }}
             </div>
         {% endfor %}
     {% endfor %}
-{% endif %}
+</div>
 
 <div>
     {% block fos_user_content %}
     {% endblock fos_user_content %}
 </div>
+
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 </body>
 </html>

@@ -1,0 +1,22 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="container">
+    <div class="row form-signin">
+        {% if form_errors(form.plainPassword.first) is not empty or form_errors(form.plainPassword.second) is not empty %}
+            <div class="security-error">{{ form_errors(form.plainPassword.first) }} {{ form_errors(form.plainPassword.second) }} </div>
+        {% endif %}
+
+        {{ form_errors(form) }}
+        {{ form_start(form, { 'action': path('fos_user_resetting_reset', {'token': token}), 'attr': { 'class': 'fos_user_resetting_reset' } }) }}
+        {{ form_widget(form.plainPassword.first,{'attr':{'class':'form-control user-input','placeholder':'Password'}}) }}
+        {{ form_widget(form.plainPassword.second,{'attr':{'class':'form-control user-input','placeholder':'Confirm your password'}}) }}
+        <div>
+            <input type="submit" class="btn btn-lg btn-default btn-block" value="{{ 'resetting.reset.submit'|trans }}" />
+        </div>
+        <p class="security-nav">
+            <a href="{{ path('fos_user_security_login') }}">Login</a>
+            <a href="{{ path('fos_user_resetting_request') }}">Lost your password?</a>
+        </p>
+        {{ form_end(form) }}
+    </div>
+</div>

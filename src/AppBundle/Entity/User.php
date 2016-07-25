@@ -8,7 +8,7 @@ use FOS\UserBundle\Model\User as BaseUser;
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 
 /**
- * @ORM\Table(name="app_users")
+ * @ORM\Table(name="users")
  * @ORM\Entity(repositoryClass="AppBundle\Entity\UserRepository")
  */
 class User extends BaseUser implements AdvancedUserInterface, \Serializable

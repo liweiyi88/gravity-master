@@ -156,3 +156,19 @@ textarea.form-control
 {
     min-height: 200px;
 }
+
+
+/*custom security style*/
+.btn-default
+{
+    background-color: transparent !important;
+    border: 3px solid #333333 !important;
+    border-radius: 0;
+}
+
+.btn-default:hover
+{
+    color: white !important;
+    background-color: #333333 !important;
+    transition: all 0.3s ease 0s;
+}
