@@ -9,3 +9,4 @@ var/bootstrap.php.cache
 var/SymfonyRequirements.php
 composer.phar
 .DS_Store
+.idea
