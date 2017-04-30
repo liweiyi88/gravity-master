@@ -102,3 +102,11 @@ fos_user:
                 from_email:
                     address:        resetting@gravity.com.au
                     sender_name:    Demo Resetting
+
+easy_admin:
+    entities:
+        - AppBundle\Entity\Brand
+        - AppBundle\Entity\Product
+        - AppBundle\Entity\Category
+        - AppBundle\Entity\User
+        - AppBundle\Entity\HomepageSettings

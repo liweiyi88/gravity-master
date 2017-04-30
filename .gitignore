@@ -10,3 +10,4 @@ var/SymfonyRequirements.php
 composer.phar
 .DS_Store
 .idea
+web/bundles
