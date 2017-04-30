@@ -58,11 +58,9 @@ class Product
     /**
      * @var ArrayCollection
      *
-     * @ORM\ManyToMany(targetEntity="Category", inversedBy="products", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Category", inversedBy="products")
      */
     private $categories;
-
-
 
     /**
      * @ORM\ManyToOne(targetEntity="Brand", inversedBy="products")

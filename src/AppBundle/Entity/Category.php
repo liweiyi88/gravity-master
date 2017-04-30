@@ -46,32 +46,11 @@ class Category
      */
     private $products;
 
-
-    /**
-     * @ORM\OneToMany(targetEntity="Category", mappedBy="parent")
-     */
-    private $children;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="children")
-     * @ORM\JoinColumn(name="parent_id", referencedColumnName="id")
-     */
-    private $parent;
-
-
     /**
      * this brands attribute is only used for rendering the brands in the homepage.
      * it is not the table column for category.
      */
     private $brands;
-
-
-    public function __construct()
-    {
-        $this->products = new ArrayCollection();
-        $this->children = new ArrayCollection();
-    }
-
 
     /**
      * Get id
@@ -114,7 +93,7 @@ class Category
      *
      * @return Category
      */
-    public function addProduct(\AppBundle\Entity\Product $product)
+    public function addProduct(Product $product)
     {
         if (!$this->products->contains($product))
         {
@@ -128,7 +107,7 @@ class Category
      *
      * @param \AppBundle\Entity\Product $product
      */
-    public function removeProduct(\AppBundle\Entity\Product $product)
+    public function removeProduct(Product $product)
     {
         $this->products->removeElement($product);
     }
@@ -141,64 +120,6 @@ class Category
     public function getProducts()
     {
         return $this->products;
-    }
-
-    /**
-     * Add child
-     *
-     * @param \AppBundle\Entity\Category $child
-     *
-     * @return Category
-     */
-    public function addChild(\AppBundle\Entity\Category $child)
-    {
-        $this->children[] = $child;
-
-        return $this;
-    }
-
-    /**
-     * Remove child
-     *
-     * @param \AppBundle\Entity\Category $child
-     */
-    public function removeChild(\AppBundle\Entity\Category $child)
-    {
-        $this->children->removeElement($child);
-    }
-
-    /**
-     * Get children
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getChildren()
-    {
-        return $this->children;
-    }
-
-    /**
-     * Set parent
-     *
-     * @param \AppBundle\Entity\Category $parent
-     *
-     * @return Category
-     */
-    public function setParent(\AppBundle\Entity\Category $parent = null)
-    {
-        $this->parent = $parent;
-
-        return $this;
-    }
-
-    /**
-     * Get parent
-     *
-     * @return \AppBundle\Entity\Category
-     */
-    public function getParent()
-    {
-        return $this->parent;
     }
 
     /**
@@ -241,4 +162,11 @@ class Category
         $this->brands = $brands;
     }
 
+    public function __toString()
+    {
+        // to show the name of the Category in the select
+        return $this->name;
+        // to show the id of the Category in the select
+        // return $this->id;
+    }
 }
